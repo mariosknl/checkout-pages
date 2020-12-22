@@ -1,7 +1,7 @@
 import React from "react";
 
 import Form from "./Form";
-import { FormStyles } from "./contactInfoStyles";
+import { FormStyles } from "../common/FormStyles";
 
 const ContactInformation = () => {
   return (

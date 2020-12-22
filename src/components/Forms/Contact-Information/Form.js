@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import FormField from "../common/FormField";
 import validationSchema from "./validationSchema";
 import { initialValues } from "./initialValues";
-import { ErrorMessage } from "./contactInfoStyles";
+import { ErrorMessage, MultipleInputStyles } from "../common/FormStyles";
 
 const Form = ({ onSubmit }) => {
   const formik = useFormik({
@@ -30,15 +30,17 @@ const Form = ({ onSubmit }) => {
         <ErrorMessage>{formik.errors.phoneNumber}</ErrorMessage>
       ) : null}
 
-      <FormField label="First Name" type="text" {...firstNameProps} />
-      {formik.touched.firstName && formik.errors.firstName ? (
-        <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
-      ) : null}
+      <MultipleInputStyles>
+        <FormField label="First Name" type="text" {...firstNameProps} />
+        {formik.touched.firstName && formik.errors.firstName ? (
+          <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
+        ) : null}
 
-      <FormField label="LastfName" type="text" {...lastNameProps} />
-      {formik.touched.lastName && formik.errors.lastName ? (
-        <ErrorMessage>{formik.errors.lastName}</ErrorMessage>
-      ) : null}
+        <FormField label="LastfName" type="text" {...lastNameProps} />
+        {formik.touched.lastName && formik.errors.lastName ? (
+          <ErrorMessage>{formik.errors.lastName}</ErrorMessage>
+        ) : null}
+      </MultipleInputStyles>
     </form>
   );
 };

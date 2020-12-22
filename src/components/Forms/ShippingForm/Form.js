@@ -1,27 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 
 import FormField from "../common/FormField";
 import selectCountry from "./selectCountry";
-
-const initialValues = {
-  streetAddress: "",
-  otherInfo: "",
-  postalCode: "",
-  country: "",
-  city: "",
-  state: "",
-};
-
-const validationSchema = Yup.object().shape({
-  streetAddress: Yup.string().required("Cannot be empty"),
-  otherInfo: Yup.string(),
-  postalCode: Yup.string().required("Cannot be empty"),
-  country: Yup.string().required("Cannot be empty"),
-  city: Yup.string().required("Cannot be empty"),
-  state: Yup.string().required("Cannot be empty"),
-});
+import { initialValues } from "./initialValues";
+import { validationSchema } from "./validationSchema";
 
 const Form = ({ onSubmit }) => {
   const formik = useFormik({

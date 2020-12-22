@@ -4,10 +4,18 @@ import * as theme from "../../../utils";
 
 const { defaultTheme } = theme;
 
-const InputStyles = styled.input`
-  width: 80%;
-  margin: 0 auto;
-  border: 1px solid ${defaultTheme.borderColor};
-`;
+export const InputStyles = styled.div`
+  width: 90%;
+  margin: 0.8rem auto;
+  display: flex;
+  flex-direction: column;
 
-export { InputStyles };
+  input {
+    width: 100%;
+  }
+
+  .label {
+    font-size: 1rem;
+    text-align: start;
+  }
+`;

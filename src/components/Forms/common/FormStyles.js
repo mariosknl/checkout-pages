@@ -10,10 +10,26 @@ const FormStyles = styled.form`
   margin: 0 auto;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
+  text-align: center;
 `;
 
 const ErrorMessage = styled.span`
   color: ${defaultTheme.status.errorColor};
 `;
 
-export { ErrorMessage, FormStyles };
+const MultipleInputStyles = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+
+  input {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  label {
+    padding-left: 1rem;
+  }
+`;
+
+export { ErrorMessage, FormStyles, MultipleInputStyles };

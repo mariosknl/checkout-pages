@@ -4,10 +4,12 @@ import { InputStyles } from "./InputStyles";
 
 const FormField = ({ name, label, ...rest }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label> <br />
-      <InputStyles id={name} name={name} {...rest} />
-    </div>
+    <InputStyles>
+      <label className="label" htmlFor={name}>
+        {label}
+      </label>
+      <input id={name} name={name} {...rest} />
+    </InputStyles>
   );
 };
 
