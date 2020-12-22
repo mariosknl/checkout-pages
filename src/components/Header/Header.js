@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 
 const Steps = styled.span`
   position: absolute;
@@ -16,13 +16,18 @@ const Steps = styled.span`
   border-radius: 2px;
 `;
 
+const HeaderContainer = styled.header`
+  width: 100%;
+  margin: 0 auto;
+  background-color: red;
+`;
+
 const Header = () => {
   return (
-    <div>
+    <HeaderContainer>
       <img src={logo} alt="logo_image" />
-      <h1>Cubbit</h1>
       <Steps>1</Steps>
-    </div>
+    </HeaderContainer>
   );
 };
 

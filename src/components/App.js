@@ -1,13 +1,22 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 import { defaultTheme, GlobalStyle } from "../utils";
 
-import Header from "./Header";
+import Header from "./Header/Header";
+
+const MainContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+`;
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Header />
+    <MainContainer>
+      <>
+        <Header />
+      </>
+    </MainContainer>
     <GlobalStyle />
   </ThemeProvider>
 );
