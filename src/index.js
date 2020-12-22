@@ -1,16 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "styled-components";
 
-import PrimaryButton, { SecondaryButton } from "./components/Buttons";
-import { defaultTheme, GlobalStyle } from "./utils";
+import App from "./components/App";
 
-const App = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <PrimaryButton modifiers="large">Buy Now</PrimaryButton>
-    <SecondaryButton modifiers="small">Back</SecondaryButton>
-    <GlobalStyle />
-  </ThemeProvider>
-);
+const Index = () => <App />;
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(<Index />, document.querySelector("#root"));
