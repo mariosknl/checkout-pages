@@ -1,8 +1,9 @@
 import React from "react";
-import { useFormik, Field } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import FormField from "../FormField";
+import FormField from "../common/FormField";
+import selectCountry from "./selectCountry";
 
 const initialValues = {
   streetAddress: "",
@@ -37,12 +38,7 @@ const Form = ({ onSubmit }) => {
   const stateProps = formik.getFieldProps("state");
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormField
-        label="Street Address"
-        type="text"
-        name="streetAddress"
-        {...streetAddressProps}
-      />
+      <FormField label="Street Address" type="text" {...streetAddressProps} />
       {formik.touched.streetAddress && formik.errors.streetAddress ? (
         <div>{formik.errors.streetAddress}</div>
       ) : null}
@@ -50,46 +46,30 @@ const Form = ({ onSubmit }) => {
       <FormField
         label="Other Information (optional)"
         type="text"
-        name="otherInfo"
         {...otherInfoProps}
       />
       {formik.touched.otherInfo && formik.errors.otherInfo ? (
         <div>{formik.errors.otherInfo}</div>
       ) : null}
 
-      <FormField
-        label="Postal Code"
-        type="text"
-        name="postalCode"
-        {...postalCodeProps}
-      />
+      <FormField label="Postal Code" type="text" {...postalCodeProps} />
       {formik.touched.postalCode && formik.errors.postalCode ? (
         <div>{formik.errors.postalCode}</div>
       ) : null}
 
-      <FormField label="Country" type="select" name="state" {...stateProps} />
-      {formik.touched.state && formik.errors.state ? (
-        <div>{formik.errors.state}</div>
-      ) : null}
-
-      <FormField
-        label="State/Region/Province"
-        type="text"
-        name="state"
-        {...stateProps}
-      />
-      {formik.touched.state && formik.errors.state ? (
-        <div>{formik.errors.state}</div>
-      ) : null}
-
-      <FormField
-        label="Postal Code"
-        type="text"
-        name="postalCode"
-        {...postalCodeProps}
-      />
+      <FormField label="Country" type="text" name="country" {...countryProps} />
       {formik.touched.postalCode && formik.errors.postalCode ? (
         <div>{formik.errors.postalCode}</div>
+      ) : null}
+
+      <FormField label="City" type="text" {...cityProps} />
+      {formik.touched.city && formik.errors.city ? (
+        <div>{formik.errors.city}</div>
+      ) : null}
+
+      <FormField label="State/Region/Province" type="text" {...stateProps} />
+      {formik.touched.state && formik.errors.state ? (
+        <div>{formik.errors.state}</div>
       ) : null}
     </form>
   );

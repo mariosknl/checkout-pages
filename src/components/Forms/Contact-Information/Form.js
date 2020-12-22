@@ -1,34 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 
-import FormField from "../FormField";
-
-const initialValues = {
-  email: "",
-  phoneNumber: "",
-  firstName: "",
-  lastName: "",
-};
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("It needs to be a valid email")
-    .matches(
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    )
-    .required("Cannot be empty"),
-  phoneNumber: Yup.number()
-    .min(
-      12,
-      "Needs to be at least 12 numbers. Be sure to add your country code in front."
-    )
-    .positive()
-    .integer()
-    .required("Cannot be empty"),
-  firstName: Yup.string().required("Cannot be empty"),
-  lastName: Yup.string().required("Cannot be empty"),
-});
+import FormField from "../common/FormField";
+import validationSchema from "./validationSchema";
+import { initialValues } from "./initialValues";
+import { ErrorMessage } from "./contactInfoStyles";
 
 const Form = ({ onSubmit }) => {
   const formik = useFormik({
@@ -41,38 +17,27 @@ const Form = ({ onSubmit }) => {
   const phoneNumberProps = formik.getFieldProps("phoneNumber");
   const firstNameProps = formik.getFieldProps("firstName");
   const lastNameProps = formik.getFieldProps("lastName");
+
   return (
     <form onSubmit={formik.handleSubmit}>
-      <FormField label="email" type="email" name="email" {...emailProps} />
+      <FormField label="Email" type="email" {...emailProps} />
       {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
+        <ErrorMessage>{formik.errors.email}</ErrorMessage>
       ) : null}
-      <FormField
-        label="phoneNumber"
-        type="text"
-        name="phoneNumber"
-        {...phoneNumberProps}
-      />
+
+      <FormField label="Phone Number" type="text" {...phoneNumberProps} />
       {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-        <div>{formik.errors.phoneNumber}</div>
+        <ErrorMessage>{formik.errors.phoneNumber}</ErrorMessage>
       ) : null}
-      <FormField
-        label="firstName"
-        type="text"
-        name="firstName"
-        {...firstNameProps}
-      />
+
+      <FormField label="First Name" type="text" {...firstNameProps} />
       {formik.touched.firstName && formik.errors.firstName ? (
-        <div>{formik.errors.firstName}</div>
+        <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
       ) : null}
-      <FormField
-        label="lastName"
-        type="text"
-        name="lastName"
-        {...lastNameProps}
-      />
+
+      <FormField label="LastfName" type="text" {...lastNameProps} />
       {formik.touched.lastName && formik.errors.lastName ? (
-        <div>{formik.errors.lastName}</div>
+        <ErrorMessage>{formik.errors.lastName}</ErrorMessage>
       ) : null}
     </form>
   );
