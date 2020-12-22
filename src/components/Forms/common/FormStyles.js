@@ -11,6 +11,9 @@ const FormStyles = styled.form`
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 const ErrorMessage = styled.span`

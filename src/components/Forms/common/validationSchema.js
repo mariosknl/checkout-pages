@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-const validationSchema = Yup.object().shape({
+const validationSchemaContact = Yup.object().shape({
   email: Yup.string()
     .email("It needs to be a valid email")
     .matches(
@@ -18,4 +18,13 @@ const validationSchema = Yup.object().shape({
   lastName: Yup.string().required("Cannot be empty"),
 });
 
-export default validationSchema;
+const validationSchemaShipping = Yup.object().shape({
+  streetAddress: Yup.string().required("Cannot be empty"),
+  otherInfo: Yup.string(),
+  postalCode: Yup.string().required("Cannot be empty"),
+  country: Yup.string().required("Cannot be empty"),
+  city: Yup.string().required("Cannot be empty"),
+  state: Yup.string().required("Cannot be empty"),
+});
+
+export { validationSchemaContact, validationSchemaShipping };

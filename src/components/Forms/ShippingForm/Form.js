@@ -1,15 +1,21 @@
 import React from "react";
 import { useFormik } from "formik";
 
-import FormField from "../common/FormField";
+import * as common from "../common";
 import selectCountry from "./selectCountry";
-import { initialValues } from "./initialValues";
-import { validationSchema } from "./validationSchema";
+
+const {
+  ErrorMessage,
+  FormField,
+  initialValuesShipping,
+  MultipleInputStyles,
+  validationSchemaShipping,
+} = common;
 
 const Form = ({ onSubmit }) => {
   const formik = useFormik({
-    initialValues,
-    validationSchema,
+    initialValuesShipping,
+    validationSchemaShipping,
     onSubmit,
   });
 
@@ -23,7 +29,7 @@ const Form = ({ onSubmit }) => {
     <form onSubmit={formik.handleSubmit}>
       <FormField label="Street Address" type="text" {...streetAddressProps} />
       {formik.touched.streetAddress && formik.errors.streetAddress ? (
-        <div>{formik.errors.streetAddress}</div>
+        <ErrorMessage>{formik.errors.streetAddress}</ErrorMessage>
       ) : null}
 
       <FormField
@@ -32,28 +38,37 @@ const Form = ({ onSubmit }) => {
         {...otherInfoProps}
       />
       {formik.touched.otherInfo && formik.errors.otherInfo ? (
-        <div>{formik.errors.otherInfo}</div>
+        <ErrorMessage>{formik.errors.otherInfo}</ErrorMessage>
       ) : null}
 
-      <FormField label="Postal Code" type="text" {...postalCodeProps} />
-      {formik.touched.postalCode && formik.errors.postalCode ? (
-        <div>{formik.errors.postalCode}</div>
-      ) : null}
+      <MultipleInputStyles>
+        <FormField label="Postal Code" type="text" {...postalCodeProps} />
+        {formik.touched.postalCode && formik.errors.postalCode ? (
+          <ErrorMessage>{formik.errors.postalCode}</ErrorMessage>
+        ) : null}
 
-      <FormField label="Country" type="text" name="country" {...countryProps} />
-      {formik.touched.postalCode && formik.errors.postalCode ? (
-        <div>{formik.errors.postalCode}</div>
-      ) : null}
+        <FormField
+          label="Country"
+          type="text"
+          name="country"
+          {...countryProps}
+        />
+        {formik.touched.postalCode && formik.errors.postalCode ? (
+          <ErrorMessage>{formik.errors.postalCode}</ErrorMessage>
+        ) : null}
+      </MultipleInputStyles>
 
-      <FormField label="City" type="text" {...cityProps} />
-      {formik.touched.city && formik.errors.city ? (
-        <div>{formik.errors.city}</div>
-      ) : null}
+      <MultipleInputStyles>
+        <FormField label="City" type="text" {...cityProps} />
+        {formik.touched.city && formik.errors.city ? (
+          <ErrorMessage>{formik.errors.city}</ErrorMessage>
+        ) : null}
 
-      <FormField label="State/Region/Province" type="text" {...stateProps} />
-      {formik.touched.state && formik.errors.state ? (
-        <div>{formik.errors.state}</div>
-      ) : null}
+        <FormField label="State/Region/Province" type="text" {...stateProps} />
+        {formik.touched.state && formik.errors.state ? (
+          <ErrorMessage>{formik.errors.state}</ErrorMessage>
+        ) : null}
+      </MultipleInputStyles>
     </form>
   );
 };

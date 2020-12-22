@@ -1,15 +1,20 @@
 import React from "react";
 import { useFormik } from "formik";
 
-import FormField from "../common/FormField";
-import validationSchema from "./validationSchema";
-import { initialValues } from "./initialValues";
-import { ErrorMessage, MultipleInputStyles } from "../common/FormStyles";
+import * as common from "../common";
+
+const {
+  ErrorMessage,
+  FormField,
+  initialValuesContact,
+  MultipleInputStyles,
+  validationSchemaContact,
+} = common;
 
 const Form = ({ onSubmit }) => {
   const formik = useFormik({
-    initialValues,
-    validationSchema,
+    initialValuesContact,
+    validationSchemaContact,
     onSubmit,
   });
 
