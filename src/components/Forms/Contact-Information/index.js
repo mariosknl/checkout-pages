@@ -1,7 +1,9 @@
 import React from "react";
 
 import Form from "./Form";
-import { FormStyles } from "../common/FormStyles";
+import * as common from "../common";
+
+const { FormStyles } = common;
 
 const ContactInformation = () => {
   return (

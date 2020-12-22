@@ -5,7 +5,7 @@ import * as theme from "../../../utils";
 const { defaultTheme } = theme;
 
 const FormStyles = styled.form`
-  width: 80%;
+  width: 100%;
   padding: 14px;
   margin: 0 auto;
   border: 1px solid ${defaultTheme.borderColor};
