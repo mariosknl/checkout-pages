@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ThemeProvider } from "styled-components";
+
 import PrimaryButton, { SecondaryButton } from "./components/Buttons";
-import { GlobalStyle } from "./utils";
+import { defaultTheme, GlobalStyle } from "./utils";
 
 const App = () => (
-  <div>
+  <ThemeProvider theme={defaultTheme}>
     <PrimaryButton modifiers="large">Buy Now</PrimaryButton>
     <SecondaryButton modifiers="small">Back</SecondaryButton>
     <GlobalStyle />
-  </div>
+  </ThemeProvider>
 );
 
 ReactDOM.render(<App />, document.querySelector("#root"));

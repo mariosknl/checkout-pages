@@ -7,7 +7,9 @@ export const defaultTheme = {
   buttonColor: blue[400],
   textColorOnPrimary: white[400],
   textColor: black[400],
-  errorColor: red[400],
   subTextColor: black[200],
   primaryFont,
+  status: {
+    errorColor: red[400],
+  },
 };
