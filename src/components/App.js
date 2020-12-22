@@ -1,16 +1,16 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import { defaultTheme, GlobalStyle } from "../utils";
 
 import Header from "./Header/Header";
 import ContactInformation from "./Forms/Contact-Information";
-import Shipping from "./Forms/ShippingForm";
+import Shipping from "./Forms/Shipping-Form";
+import BillingInformation from "./Forms/Billing-information";
 
-const MainContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-`;
+import * as common from "./styles";
+
+const { MainContainer } = common;
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
@@ -20,6 +20,7 @@ const App = () => (
       </>
       <ContactInformation />
       <Shipping />
+      <BillingInformation />
     </MainContainer>
     <GlobalStyle />
   </ThemeProvider>
