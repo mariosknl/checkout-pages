@@ -13,5 +13,6 @@ module.exports = {
       },
     },
     "@storybook/addon-essentials",
+    "@storybook/addon-a11y/register",
   ],
 };
