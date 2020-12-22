@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 import * as theme from "../../../utils";
 
-const { defaultTheme } = theme;
-
 export const InputStyles = styled.div`
   width: 90%;
   margin: 0.8rem auto;
