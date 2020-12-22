@@ -32,7 +32,7 @@ const PrimaryButton = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export const SecondaryButton = styled(Button)`
+const SecondaryButton = styled(Button)`
   background: none;
   border: 2px solid ${defaultTheme.buttonColor};
   color: ${defaultTheme.buttonColor};
@@ -40,4 +40,4 @@ export const SecondaryButton = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export default PrimaryButton;
+export { PrimaryButton, SecondaryButton };
