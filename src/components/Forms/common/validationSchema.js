@@ -27,4 +27,20 @@ const validationSchemaShipping = Yup.object().shape({
   state: Yup.string().required("Cannot be empty"),
 });
 
+function formatDate(date) {
+  return new Date(date);
+}
+
+const validationSchemaPayment = Yup.object().shape({
+  cardHolder: Yup.string().required(),
+  cardNumber: Yup.number()
+    .min(16, "Needs to be 16 digits")
+    .integer()
+    .required("Cannot be empty"),
+  expirationData: Yup.date().min(
+    Yup.ref("expirationDate"),
+    ({ min }) => "MM/YY"
+  ),
+});
+
 export { validationSchemaContact, validationSchemaShipping };

@@ -14,4 +14,11 @@ const initialValuesShipping = {
   state: "",
 };
 
-export { initialValuesContact, initialValuesShipping };
+const initialValuesPayment = {
+  cardHolder: "",
+  cardNumber: "",
+  expirationDate: "",
+  CVV: "",
+};
+
+export { initialValuesContact, initialValuesPayment, initialValuesShipping };
