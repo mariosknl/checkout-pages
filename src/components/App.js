@@ -7,6 +7,7 @@ import Header from "./Header/Header";
 import ContactInformation from "./Forms/Contact-Information";
 import Shipping from "./Forms/Shipping-Form";
 import BillingInformation from "./Forms/Billing-information";
+import PaymentInformation from "./Forms/Payment-Methods";
 
 import * as common from "./styles";
 
@@ -21,6 +22,7 @@ const App = () => (
       <ContactInformation />
       <Shipping />
       <BillingInformation />
+      <PaymentInformation />
     </MainContainer>
     <GlobalStyle />
   </ThemeProvider>

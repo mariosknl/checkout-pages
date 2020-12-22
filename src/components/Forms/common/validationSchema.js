@@ -1,4 +1,7 @@
 import * as Yup from "yup";
+import valid from "card-validator";
+
+import { expirationDate } from "./expirationDate";
 
 const validationSchemaContact = Yup.object().shape({
   email: Yup.string()
@@ -27,20 +30,21 @@ const validationSchemaShipping = Yup.object().shape({
   state: Yup.string().required("Cannot be empty"),
 });
 
-function formatDate(date) {
-  return new Date(date);
-}
-
 const validationSchemaPayment = Yup.object().shape({
   cardHolder: Yup.string().required(),
-  cardNumber: Yup.number()
-    .min(16, "Needs to be 16 digits")
-    .integer()
-    .required("Cannot be empty"),
-  expirationData: Yup.date().min(
-    Yup.ref("expirationDate"),
-    ({ min }) => "MM/YY"
-  ),
+  cardNumber: Yup.string()
+    .test(
+      "test-number",
+      "Credit Card Number is invalid",
+      (value) => valid.number(value).isValid
+    )
+    .required(),
+  expirationData: expirationDate,
+  CVV: Yup.number().min(3).max(3).integer().required("Cannot be empty"),
 });
 
-export { validationSchemaContact, validationSchemaShipping };
+export {
+  validationSchemaContact,
+  validationSchemaPayment,
+  validationSchemaShipping,
+};
