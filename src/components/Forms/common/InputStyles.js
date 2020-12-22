@@ -15,7 +15,7 @@ export const InputStyles = styled.div`
   }
 
   .label {
-    font-size: 1rem;
+    font-size: ${theme.typeScale.small};
     text-align: start;
   }
 `;
