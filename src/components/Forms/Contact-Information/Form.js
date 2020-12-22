@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import FormField from "./FormField";
+import FormField from "../FormField";
 
 const initialValues = {
   email: "",
