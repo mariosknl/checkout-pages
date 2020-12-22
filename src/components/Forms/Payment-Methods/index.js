@@ -1,13 +1,18 @@
 import React from "react";
 
 import PaymentMethods from "./paymentMethods";
-import { PaymentMethodsStyles } from "./paymentMethodsStyles";
+import { BannerStyles, PaymentMethodsStyles } from "./paymentMethodsStyles";
 
 const PaymentInformation = () => {
   return (
-    <PaymentMethodsStyles>
-      <PaymentMethods />
-    </PaymentMethodsStyles>
+    <>
+      <BannerStyles>
+        <p>Pay with credit card</p>
+      </BannerStyles>
+      <PaymentMethodsStyles>
+        <PaymentMethods />
+      </PaymentMethodsStyles>
+    </>
   );
 };
 
