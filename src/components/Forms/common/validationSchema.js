@@ -1,8 +1,6 @@
 import * as Yup from "yup";
 import valid from "card-validator";
 
-import { expirationDate } from "./expirationDate";
-
 export const validationSchemaForms = Yup.object({
   email: Yup.string()
     .email("It needs to be a valid email")
@@ -25,14 +23,4 @@ export const validationSchemaForms = Yup.object({
   country: Yup.string().required("This field is mandatory"),
   city: Yup.string().required("This field is mandatory"),
   state: Yup.string().required("This field is mandatory"),
-  cardHolder: Yup.string().required(),
-  cardNumber: Yup.string()
-    .test(
-      "test-number",
-      "Credit Card Number is invalid",
-      (value) => valid.number(value).isValid
-    )
-    .required(),
-  expirationData: expirationDate,
-  CVV: Yup.string().min(3).max(3).required("This field is mandatory"),
 });

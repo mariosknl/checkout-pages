@@ -1,13 +1,13 @@
 import React from "react";
 import { Steps, HeaderContainer } from "../styles/HeaderStyles";
 
-import logo from "../../assets/logo.svg";
+import light from "../../assets/light.png";
 
 const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <img src={logo} alt="logo_image" />
+        <img src={light} alt="logo_image" />
         <Steps>1</Steps>
       </HeaderContainer>
     </>

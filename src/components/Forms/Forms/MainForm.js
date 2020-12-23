@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import valid from "card-validator";
 
 import {
   Checkbox,
@@ -21,9 +23,7 @@ import {
 
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 
-import visa from "../../../assets/visa.svg";
-import master from "../../../assets/master.svg";
-import maestro from "../../../assets/maestro.svg";
+import group from "../../../assets/group.png";
 
 const MainForm = () => {
   return (
@@ -33,78 +33,94 @@ const MainForm = () => {
         validationSchema={validationSchemaForms}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 7));
+            alert(JSON.stringify(values, null, 5));
             setSubmitting(false);
-          }, 200);
+          });
         }}
       >
         <Form>
           {/* Contact Information */}
           <FormStyles>
-            <TextInput label="Email " name="email" type="text" />
-            <TextInput label="Phone Number" name="phoneNumber" type="text" />
-            <TextInput label="First Name" name="firstName" type="text" />
-            <TextInput label="Last Name" name="lastName" type="text" />
+            <TextInput id="email" label="Email" name="email" type="text" />
+            <TextInput
+              id="phoneNumber"
+              label="Phone Number"
+              name="phoneNumber"
+              type="text"
+            />
+            <TextInput
+              id="firstName"
+              label="First Name"
+              name="firstName"
+              type="text"
+            />
+            <TextInput
+              id="lastName"
+              label="Last Name"
+              name="lastName"
+              type="text"
+            />
           </FormStyles>
 
           {/* Shipping Information */}
           <FormStyles>
             <TextInput
+              id="streetAddress"
               label="Street Address"
               name="streetAddress"
               type="text"
             />
             <TextInput
+              id="otherInfo"
               label="Other Information (optional)"
               name="otherInfo"
               type="text"
             />
-            <TextInput label="Postal Code" name="postalCode" type="text" />
-            <SelectCountry label="Country" name="country">
+            <TextInput
+              label="Postal Code"
+              id="postalCode"
+              name="postalCode"
+              type="text"
+            />
+            <SelectCountry label="Country" id="country" name="country">
               <option value="">Select Country</option>
-              <option value="italy">Italy</option>
-              <option value="greece">Greece</option>
+              <option id="italy" value="italy">
+                Italy
+              </option>
+              <option id="greece" value="greece">
+                Greece
+              </option>
             </SelectCountry>
-            <TextInput label="City" name="city" type="text" />
-            <TextInput label="State/Region" name="state" type="text" />
+            <TextInput label="City" id="city" name="city" type="text" />
+            <TextInput
+              label="State/Region"
+              id="state"
+              name="state"
+              type="text"
+            />
           </FormStyles>
 
           {/* Shipping Options */}
           <BillingOptionsStyles>
-            <Checkbox name="picked" type="radio" value="shippingAddress">
+            <Checkbox
+              id="shippingAddress"
+              name="picked1"
+              type="radio"
+              value="shippingAddress"
+            >
               Use my shipping address
             </Checkbox>
-            <Checkbox name="picked" type="radio" value="shippingDifAddress">
+            <Checkbox
+              id="shippingDifAddress"
+              name="picked2"
+              type="radio"
+              value="shippingDifAddress"
+            >
               Use a different address
             </Checkbox>
           </BillingOptionsStyles>
 
           {/* Payment Methods */}
-          <>
-            <BannerStyles>
-              <p>Pay with credit card</p>
-              <CardStyles>
-                <img src={visa} alt="visaCard" />
-                <img src={master} alt="masterCard" />
-                <img src={maestro} alt="maestroCard" />
-              </CardStyles>
-            </BannerStyles>
-            <PaymentMethodsStyles>
-              <TextInput label="Card holder" name="cardHolder" type="text" />
-              <TextInput
-                label="Credit / Debit card number"
-                name="cardNumber"
-                type="text"
-              />
-              <TextInput
-                label="Expiration Date"
-                name="expirationDate"
-                type="date"
-              />
-              <TextInput label="CVV" name="CVV" type="text" />
-            </PaymentMethodsStyles>
-            <BannerStyles />
-          </>
 
           {/* Terms & Buttons */}
 
