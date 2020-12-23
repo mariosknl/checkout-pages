@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-import { typeScale } from "../../utils";
+import { typeScale, blue, black } from "../../utils";
 
 const FooterStyles = styled.div`
   width: 100%;
   height: 300px;
-  background-color: yellow;
 
   input {
     margin-top: 1rem;
@@ -14,6 +13,17 @@ const FooterStyles = styled.div`
   label {
     font-size: ${typeScale.input};
     margin-left: 1rem;
+  }
+
+  p {
+    font-size: ${typeScale.input};
+    color: ${black[200]};
+  }
+
+  span {
+    font-size: ${typeScale.small};
+    text-decoration: underline;
+    color: ${blue[400]};
   }
 `;
 

@@ -18,6 +18,10 @@ const Footer = () => {
         <SecondaryButton modifiers="small">Back</SecondaryButton>
         <PrimaryButton modifiers="large">Buy Now</PrimaryButton>
       </ButtonStyles>
+      <p>
+        By clicking the button 'Buy Now', I agree to the{" "}
+        <span>Terms and Conditions</span> and the <span>Privacy Policy</span>
+      </p>
     </FooterStyles>
   );
 };
