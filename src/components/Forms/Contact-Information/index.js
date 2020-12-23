@@ -13,4 +13,4 @@ const ContactInformation = () => {
   );
 };
 
-export default ContactInformation;
+export { ContactInformation };

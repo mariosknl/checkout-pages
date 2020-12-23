@@ -16,7 +16,9 @@ const Footer = () => {
       />
       <ButtonStyles>
         <SecondaryButton modifiers="small">Back</SecondaryButton>
-        <PrimaryButton modifiers="large">Buy Now</PrimaryButton>
+        <PrimaryButton modifiers="large" type="submit">
+          Buy Now
+        </PrimaryButton>
       </ButtonStyles>
       <p>
         By clicking the button 'Buy Now', I agree to the{" "}

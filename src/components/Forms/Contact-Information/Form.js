@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useFormik } from "formik";
 
 import * as common from "../common";
@@ -11,11 +11,29 @@ const {
   validationSchemaContact,
 } = common;
 
-const Form = ({ onSubmit }) => {
+function contactInfoReducer(state, newState) {
+  return newState;
+}
+
+const Form = () => {
+  const [contactInfo, setContactInfo] = useReducer(
+    contactInfoReducer,
+    initialValuesContact
+  );
+
   const formik = useFormik({
-    initialValuesContact,
-    validationSchemaContact,
-    onSubmit,
+    initialValues: initialValuesContact,
+    validationSchema: validationSchemaContact,
+
+    onSubmit: (values) => {
+      const { email, phoneNumber, firstName, lastName } = values;
+      const contactInfo = {
+        email,
+        phoneNumber,
+        firstName,
+        lastName,
+      };
+    },
   });
 
   const emailProps = formik.getFieldProps("email");

@@ -11,4 +11,4 @@ const ShippingForm = () => {
   );
 };
 
-export default ShippingForm;
+export { ShippingForm };

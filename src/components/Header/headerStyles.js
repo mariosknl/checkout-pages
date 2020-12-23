@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Steps = styled.span`
-  position: absolute;
   width: 36px;
   height: 36px;
   left: 423px;

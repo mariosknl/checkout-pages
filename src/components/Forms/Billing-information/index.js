@@ -17,4 +17,4 @@ const BillingInformation = () => {
   );
 };
 
-export default BillingInformation;
+export { BillingInformation };

@@ -4,11 +4,13 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme, GlobalStyle } from "../utils";
 
 import Header from "./Header/Header";
-import ContactInformation from "./Forms/Contact-Information";
-import Shipping from "./Forms/Shipping-Form";
-import BillingInformation from "./Forms/Billing-information";
-import PaymentInformation from "./Forms/Payment-Methods";
 import Footer from "./Footer/Footer";
+import {
+  BillingInformation,
+  ContactInformation,
+  PaymentInformation,
+  ShippingForm,
+} from "./Forms";
 
 import * as main from "./styles";
 
@@ -19,7 +21,7 @@ const App = () => (
     <MainContainer>
       <Header />
       <ContactInformation />
-      <Shipping />
+      <ShippingForm />
       <BillingInformation />
       <PaymentInformation />
       <Footer />

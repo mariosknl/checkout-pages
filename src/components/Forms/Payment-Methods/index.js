@@ -30,4 +30,4 @@ const PaymentInformation = () => {
   );
 };
 
-export default PaymentInformation;
+export { PaymentInformation };
