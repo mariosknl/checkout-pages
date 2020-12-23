@@ -14,6 +14,7 @@ const BillingOption = () => {
 
         <Input
           id="shippingAddress"
+          type="radio"
           name="shippingAddress"
           value="shippingAddress"
           label="Use my shipping address"
@@ -21,6 +22,7 @@ const BillingOption = () => {
 
         <Input
           id="differentAddress"
+          type="radio"
           name="differentAddress"
           value="differentAddress"
           label="Use a different shipping address"

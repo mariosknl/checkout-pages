@@ -8,21 +8,21 @@ import ContactInformation from "./Forms/Contact-Information";
 import Shipping from "./Forms/Shipping-Form";
 import BillingInformation from "./Forms/Billing-information";
 import PaymentInformation from "./Forms/Payment-Methods";
+import Footer from "./Footer/Footer";
 
-import * as common from "./styles";
+import * as main from "./styles";
 
-const { MainContainer } = common;
+const { MainContainer } = main;
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <MainContainer>
-      <>
-        <Header />
-      </>
+      <Header />
       <ContactInformation />
       <Shipping />
       <BillingInformation />
       <PaymentInformation />
+      <Footer />
     </MainContainer>
     <GlobalStyle />
   </ThemeProvider>

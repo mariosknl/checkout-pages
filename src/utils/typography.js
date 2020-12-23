@@ -6,3 +6,9 @@ export const typeScale = {
   input: "0.875rem",
   small: "0.75",
 };
+
+export const fontWeight = {
+  light: "300",
+  normal: "400",
+  bold: "700",
+};

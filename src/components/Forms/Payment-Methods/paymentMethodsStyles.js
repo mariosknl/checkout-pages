@@ -8,14 +8,25 @@ const PaymentMethodsStyles = styled.div`
 
 const BannerStyles = styled.div`
   width: 100%;
+  height: 48px;
   background-color: ${theme.black[600]};
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   p {
-    font-size: ${theme.typeScale.paragraph};
+    font-size: ${theme.typeScale.small};
+    font-weight: ${theme.fontWeight.bold};
+    margin-left: 3rem;
   }
 `;
 
-export { BannerStyles, PaymentMethodsStyles };
+const CardStyles = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 2rem;
+`;
+
+export { BannerStyles, CardStyles, PaymentMethodsStyles };
