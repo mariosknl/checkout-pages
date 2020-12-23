@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import valid from "card-validator";
 
 import {
   Checkbox,
@@ -121,6 +119,30 @@ const MainForm = () => {
           </BillingOptionsStyles>
 
           {/* Payment Methods */}
+
+          <>
+            <BannerStyles>
+              <p>Pay with credit card</p>
+              <CardStyles>
+                <img src={group} alt="creditCards" />
+              </CardStyles>
+            </BannerStyles>
+            <PaymentMethodsStyles>
+              <TextInput label="Card holder" name="cardHolder" type="text" />
+              <TextInput
+                label="Credit / Debit card number"
+                name="cardNumber"
+                type="text"
+              />
+              <TextInput
+                label="Expiration Date"
+                name="expirationDate"
+                type="date"
+              />
+              <TextInput label="CVV" name="CVV" type="text" />
+            </PaymentMethodsStyles>
+            <BannerStyles />
+          </>
 
           {/* Terms & Buttons */}
 

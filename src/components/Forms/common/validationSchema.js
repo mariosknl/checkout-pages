@@ -1,5 +1,6 @@
 import * as Yup from "yup";
-import valid from "card-validator";
+
+const month = new Date(Date.now());
 
 export const validationSchemaForms = Yup.object({
   email: Yup.string()
@@ -11,7 +12,7 @@ export const validationSchemaForms = Yup.object({
   phoneNumber: Yup.number()
     .min(
       12,
-      "Needs to be at least 12 numbers. Be sure to add your country code in front."
+      "Needs to be at least 12 numbers. Be sure to add your country code"
     )
     .integer()
     .required("This field is mandatory"),
@@ -23,4 +24,7 @@ export const validationSchemaForms = Yup.object({
   country: Yup.string().required("This field is mandatory"),
   city: Yup.string().required("This field is mandatory"),
   state: Yup.string().required("This field is mandatory"),
+  cardHolder: Yup.string().required(),
+  cardNumber: Yup.string().required(),
+  CVV: Yup.string().min(3).max(3).required("This field is mandatory"),
 });
