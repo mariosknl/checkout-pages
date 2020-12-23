@@ -3,28 +3,28 @@ import valid from "card-validator";
 
 import { expirationDate } from "./expirationDate";
 
-export const validationSchemaForms = Yup.object().shape({
+export const validationSchemaForms = Yup.object({
   email: Yup.string()
     .email("It needs to be a valid email")
     .matches(
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     )
-    .required("Cannot be empty"),
+    .required("This field is mandatory"),
   phoneNumber: Yup.number()
     .min(
       12,
       "Needs to be at least 12 numbers. Be sure to add your country code in front."
     )
     .integer()
-    .required("Cannot be empty"),
-  firstName: Yup.string().required("Cannot be empty"),
-  lastName: Yup.string().required("Cannot be empty"),
-  streetAddress: Yup.string().required("Cannot be empty"),
+    .required("This field is mandatory"),
+  firstName: Yup.string().required("This field is mandatory"),
+  lastName: Yup.string().required("This field is mandatory"),
+  streetAddress: Yup.string().required("This field is mandatory"),
   otherInfo: Yup.string(),
-  postalCode: Yup.string().required("Cannot be empty"),
-  country: Yup.string().required("Cannot be empty"),
-  city: Yup.string().required("Cannot be empty"),
-  state: Yup.string().required("Cannot be empty"),
+  postalCode: Yup.string().required("This field is mandatory"),
+  country: Yup.string().required("This field is mandatory"),
+  city: Yup.string().required("This field is mandatory"),
+  state: Yup.string().required("This field is mandatory"),
   cardHolder: Yup.string().required(),
   cardNumber: Yup.string()
     .test(
@@ -34,5 +34,5 @@ export const validationSchemaForms = Yup.object().shape({
     )
     .required(),
   expirationData: expirationDate,
-  CVV: Yup.number().min(3).max(3).integer().required("Cannot be empty"),
+  CVV: Yup.string().min(3).max(3).required("This field is mandatory"),
 });

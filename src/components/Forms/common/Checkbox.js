@@ -6,7 +6,7 @@ export const Checkbox = ({ children, ...props }) => {
   return (
     <div>
       <label className="checkbox">
-        <input type="radio" {...field} {...props} />
+        <input {...field} {...props} />
         {children}
       </label>
       {meta.touched && meta.error ? (

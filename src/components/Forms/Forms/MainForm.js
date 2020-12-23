@@ -31,6 +31,12 @@ const MainForm = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchemaForms}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 7));
+            setSubmitting(false);
+          }, 200);
+        }}
       >
         <Form>
           {/* Contact Information */}
@@ -59,13 +65,16 @@ const MainForm = () => {
               <option value="italy">Italy</option>
               <option value="greece">Greece</option>
             </SelectCountry>
-            <TextInput label="Last Name" name="lastName" type="text" />
+            <TextInput label="City" name="city" type="text" />
+            <TextInput label="State/Region" name="state" type="text" />
           </FormStyles>
 
           {/* Shipping Options */}
           <BillingOptionsStyles>
-            <Checkbox name="shippingAddress">Use my shipping address</Checkbox>
-            <Checkbox name="shippingDifAddress">
+            <Checkbox name="picked" type="radio" value="shippingAddress">
+              Use my shipping address
+            </Checkbox>
+            <Checkbox name="picked" type="radio" value="shippingDifAddress">
               Use a different address
             </Checkbox>
           </BillingOptionsStyles>
@@ -106,11 +115,11 @@ const MainForm = () => {
                 Buy Now
               </PrimaryButton>
             </ButtonStyles>
-            <p>
+            <Checkbox name="terms" type="checkbox">
               By clicking the button 'Buy Now', I agree to the{" "}
               <span>Terms and Conditions</span> and the{" "}
               <span>Privacy Policy</span>
-            </p>
+            </Checkbox>
           </FooterStyles>
         </Form>
       </Formik>
