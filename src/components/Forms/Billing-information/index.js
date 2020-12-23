@@ -3,17 +3,17 @@ import React from "react";
 import { BillingOption } from "./BillingOption";
 import {
   BillingInformationStyles,
-  ShippingOptionsStyles,
-} from "./shippingOptionsStyles";
+  BillingOptionsStyles,
+} from "./billingOptionsStyles";
 
 const BillingInformation = () => {
   return (
-    <BillingInformationStyles>
+    <BillingOptionsStyles>
       <h1>Billing information</h1>
-      <ShippingOptionsStyles>
+      <BillingInformationStyles>
         <BillingOption />
-      </ShippingOptionsStyles>
-    </BillingInformationStyles>
+      </BillingInformationStyles>
+    </BillingOptionsStyles>
   );
 };
 

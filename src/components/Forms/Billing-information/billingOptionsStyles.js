@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import * as theme from "../../../utils";
 
-const ShippingOptionsStyles = styled.div`
+const BillingOptionsStyles = styled.div`
   border: 1px solid ${theme.black[300]};
   width: 100%;
 
@@ -28,4 +28,4 @@ const BillingInformationStyles = styled.div`
   flex-direction: column;
 `;
 
-export { BillingInformationStyles, ShippingOptionsStyles };
+export { BillingInformationStyles, BillingOptionsStyles };

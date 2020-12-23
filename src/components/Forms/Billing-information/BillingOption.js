@@ -1,12 +1,12 @@
 import React from "react";
 
-import { ShippingOptionsStyles } from "./shippingOptionsStyles";
+import { BillingOptionsStyles } from "./billingOptionsStyles";
 import { Input } from "../../ui/Input";
 
 const BillingOption = () => {
   return (
     <>
-      <ShippingOptionsStyles>
+      <BillingOptionsStyles>
         <p>
           Please provide us with your billing information, so we can send you an
           invoice after order confirmation.
@@ -27,7 +27,7 @@ const BillingOption = () => {
           value="differentAddress"
           label="Use a different shipping address"
         />
-      </ShippingOptionsStyles>
+      </BillingOptionsStyles>
     </>
   );
 };

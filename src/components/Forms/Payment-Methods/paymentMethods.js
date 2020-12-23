@@ -1,15 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
 
-import * as common from "../common";
-
-const {
+import {
   ErrorMessage,
   FormField,
   initialValuesPayment,
   MultipleInputStyles,
   validationSchemaPayment,
-} = common;
+} from "../common";
 
 const PaymentMethods = ({ onSubmit }) => {
   const formik = useFormik({

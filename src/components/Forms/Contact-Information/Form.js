@@ -1,25 +1,16 @@
-import React, { useReducer } from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 
-import * as common from "../common";
-
-const {
+import {
   ErrorMessage,
   FormField,
   initialValuesContact,
   MultipleInputStyles,
   validationSchemaContact,
-} = common;
-
-function contactInfoReducer(state, newState) {
-  return newState;
-}
+} from "../common";
 
 const Form = () => {
-  const [contactInfo, setContactInfo] = useReducer(
-    contactInfoReducer,
-    initialValuesContact
-  );
+  const [contactInfo, setContactInfo] = useState(initialValuesContact);
 
   const formik = useFormik({
     initialValues: initialValuesContact,
@@ -33,6 +24,7 @@ const Form = () => {
         firstName,
         lastName,
       };
+      return setContactInfo(contactInfo);
     },
   });
 
