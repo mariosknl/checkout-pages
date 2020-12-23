@@ -15,8 +15,8 @@ const Footer = () => {
         label="I agree to the Terms and Conditions and the Privacy Policy"
       />
       <ButtonStyles>
-        <SecondaryButton />
-        <PrimaryButton />
+        <SecondaryButton modifiers="small">Back</SecondaryButton>
+        <PrimaryButton modifiers="large">Buy Now</PrimaryButton>
       </ButtonStyles>
     </FooterStyles>
   );
