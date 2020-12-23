@@ -1,7 +1,5 @@
 import * as Yup from "yup";
 
-const month = new Date(Date.now());
-
 export const validationSchemaForms = Yup.object({
   email: Yup.string()
     .email("It needs to be a valid email")
@@ -24,7 +22,4 @@ export const validationSchemaForms = Yup.object({
   country: Yup.string().required("This field is mandatory"),
   city: Yup.string().required("This field is mandatory"),
   state: Yup.string().required("This field is mandatory"),
-  cardHolder: Yup.string().required(),
-  cardNumber: Yup.string().required(),
-  CVV: Yup.string().min(3).max(3).required("This field is mandatory"),
 });

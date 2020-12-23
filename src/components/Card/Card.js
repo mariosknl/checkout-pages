@@ -1,27 +1,21 @@
-import React from 'react'
+import React from "react";
+import { usePaymentInputs } from "react-payment-inputs";
 
-const today = new Date();
-let today_mm = today.getMonth() + 1;
-let today_yy = today.getFullYear() % 100;
-
-if (today_mm < 10) {
-  today_mm = 0 + today_mm
-}
-
-let mm = expirationDate.substring(0, 2);
-let yy = expirationDate.substring(3);
-
-if (yy > today_yy || (yy == today_yy && mm >= today_mm)) {
-  return true;
-} else {
-  let errorMessage = 'The expiration date has passed. Check your card.'
-  return false;
-}
-
-const Card = () => {
+const PaymentInputs = () => {
+  const {
+    meta,
+    getCardNumberProps,
+    getExpiryDateProps,
+    getCVCProps,
+  } = usePaymentInputs();
   return (
-    
-  )
-}
+    <div>
+      <input {...getCardNumberProps()} />
+      <input {...getExpiryDateProps()} />
+      <input {...getCVCProps()} />
+      {meta.isTouched && meta.error && <span>Error: {meta.error}</span>}
+    </div>
+  );
+};
 
-export default Card
+export default PaymentInputs;

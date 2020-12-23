@@ -22,6 +22,7 @@ import {
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 
 import group from "../../../assets/group.png";
+import Card from "../../Card/Card";
 
 const MainForm = () => {
   return (
@@ -121,7 +122,7 @@ const MainForm = () => {
           {/* Payment Methods */}
 
           <>
-            <BannerStyles>
+            {/* <BannerStyles>
               <p>Pay with credit card</p>
               <CardStyles>
                 <img src={group} alt="creditCards" />
@@ -137,11 +138,13 @@ const MainForm = () => {
               <TextInput
                 label="Expiration Date"
                 name="expirationDate"
-                type="date"
+                type="string"
+                placeholder="MM/YY"
               />
               <TextInput label="CVV" name="CVV" type="text" />
             </PaymentMethodsStyles>
-            <BannerStyles />
+            <BannerStyles /> */}
+            <Card />
           </>
 
           {/* Terms & Buttons */}
