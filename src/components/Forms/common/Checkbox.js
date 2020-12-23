@@ -1,7 +1,7 @@
 import React from "react";
 import { useField } from "formik";
 
-const Checkbox = ({ children, ...props }) => {
+export const Checkbox = ({ children, ...props }) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
   return (
     <div>
@@ -15,5 +15,3 @@ const Checkbox = ({ children, ...props }) => {
     </div>
   );
 };
-
-export { Checkbox };

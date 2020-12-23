@@ -1,5 +1,5 @@
 import React from "react";
-import { Steps, HeaderContainer } from "./headerStyles";
+import { Steps, HeaderContainer } from "../styles/HeaderStyles";
 
 import logo from "../../assets/logo.svg";
 

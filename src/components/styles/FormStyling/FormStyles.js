@@ -4,8 +4,8 @@ import * as theme from "../../../utils";
 
 const { defaultTheme } = theme;
 
-const FormStyles = styled.form`
-  width: 100%;
+const FormStyles = styled.div`
+  width: 90%;
   padding: 14px;
   margin: 0 auto;
   border: 1px solid ${defaultTheme.borderColor};
@@ -26,7 +26,7 @@ const MultipleInputStyles = styled.div`
   flex-direction: row;
 
   input {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
   }
 

@@ -2,38 +2,38 @@ import React from "react";
 import { Formik, Form } from "formik";
 
 import {
-  BillingInformation,
-  ContactInformation,
-  PaymentInformation,
-  ShippingForm,
-} from "../index";
+  Checkbox,
+  initialValues,
+  TextInput,
+  SelectCountry,
+  validationSchemaForms,
+} from "../common";
 
-import { validationSchemaContact } from "../common/validationSchema";
-import { FormStyles } from "../common";
-import { Checkbox } from "../common/Checkbox";
-import { BillingOptionsStyles } from "../Billing-Information/billingOptionsStyles";
-import { TextInput } from "../common/TextInput";
-import { SelectCountry } from "../common/SelectCountry";
 import {
   BannerStyles,
+  BillingOptionsStyles,
+  ButtonStyles,
   CardStyles,
+  FooterStyles,
+  FormStyles,
   PaymentMethodsStyles,
-} from "../Payment-Methods/paymentMethodsStyles";
-import PaymentMethods from "../Payment-Methods/paymentMethods";
+} from "../../styles";
 
-const MainPage = () => {
+import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
+
+import visa from "../../../assets/visa.svg";
+import master from "../../../assets/master.svg";
+import maestro from "../../../assets/maestro.svg";
+
+const MainForm = () => {
   return (
     <>
       <Formik
-        initialValues={{
-          email: "",
-          phoneNumber: "",
-          firstName: "",
-          lastName: "",
-        }}
-        validationSchema={validationSchemaContact}
+        initialValues={initialValues}
+        validationSchema={validationSchemaForms}
       >
         <Form>
+          {/* Contact Information */}
           <FormStyles>
             <TextInput label="Email " name="email" type="text" />
             <TextInput label="Phone Number" name="phoneNumber" type="text" />
@@ -41,6 +41,7 @@ const MainPage = () => {
             <TextInput label="Last Name" name="lastName" type="text" />
           </FormStyles>
 
+          {/* Shipping Information */}
           <FormStyles>
             <TextInput
               label="Street Address"
@@ -61,6 +62,7 @@ const MainPage = () => {
             <TextInput label="Last Name" name="lastName" type="text" />
           </FormStyles>
 
+          {/* Shipping Options */}
           <BillingOptionsStyles>
             <Checkbox name="shippingAddress">Use my shipping address</Checkbox>
             <Checkbox name="shippingDifAddress">
@@ -68,24 +70,52 @@ const MainPage = () => {
             </Checkbox>
           </BillingOptionsStyles>
 
+          {/* Payment Methods */}
           <>
             <BannerStyles>
               <p>Pay with credit card</p>
               <CardStyles>
-                {/* <img src={visa} alt="visaCard" />
-          <img src={master} alt="masterCard" />
-          <img src={maestro} alt="maestroCard" /> */}
+                <img src={visa} alt="visaCard" />
+                <img src={master} alt="masterCard" />
+                <img src={maestro} alt="maestroCard" />
               </CardStyles>
             </BannerStyles>
             <PaymentMethodsStyles>
-              <PaymentMethods />
+              <TextInput label="Card holder" name="cardHolder" type="text" />
+              <TextInput
+                label="Credit / Debit card number"
+                name="cardNumber"
+                type="text"
+              />
+              <TextInput
+                label="Expiration Date"
+                name="expirationDate"
+                type="date"
+              />
+              <TextInput label="CVV" name="CVV" type="text" />
             </PaymentMethodsStyles>
             <BannerStyles />
           </>
+
+          {/* Terms & Buttons */}
+
+          <FooterStyles>
+            <ButtonStyles>
+              <SecondaryButton modifiers="small">Back</SecondaryButton>
+              <PrimaryButton modifiers="large" type="submit">
+                Buy Now
+              </PrimaryButton>
+            </ButtonStyles>
+            <p>
+              By clicking the button 'Buy Now', I agree to the{" "}
+              <span>Terms and Conditions</span> and the{" "}
+              <span>Privacy Policy</span>
+            </p>
+          </FooterStyles>
         </Form>
       </Formik>
     </>
   );
 };
 
-export default MainPage;
+export default MainForm;

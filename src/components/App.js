@@ -4,29 +4,17 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme, GlobalStyle } from "../utils";
 
 import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import {
-  BillingInformation,
-  ContactInformation,
-  PaymentInformation,
-  ShippingForm,
-} from "./Forms";
 
 import * as main from "./styles";
-import MainPage from "./Forms/Forms/MainPage";
+import MainForm from "./Forms/Forms/MainForm";
 
 const { MainContainer } = main;
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <MainContainer>
-      {/* <Header />
-      <ContactInformation />
-      <ShippingForm />
-      <BillingInformation />
-      <PaymentInformation />
-      <Footer /> */}
-      <MainPage />
+      <Header />
+      <MainForm />
     </MainContainer>
     <GlobalStyle />
   </ThemeProvider>

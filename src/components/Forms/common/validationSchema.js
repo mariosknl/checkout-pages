@@ -3,7 +3,7 @@ import valid from "card-validator";
 
 import { expirationDate } from "./expirationDate";
 
-const validationSchemaContact = Yup.object().shape({
+export const validationSchemaForms = Yup.object().shape({
   email: Yup.string()
     .email("It needs to be a valid email")
     .matches(
@@ -19,18 +19,12 @@ const validationSchemaContact = Yup.object().shape({
     .required("Cannot be empty"),
   firstName: Yup.string().required("Cannot be empty"),
   lastName: Yup.string().required("Cannot be empty"),
-});
-
-const validationSchemaShipping = Yup.object().shape({
   streetAddress: Yup.string().required("Cannot be empty"),
   otherInfo: Yup.string(),
   postalCode: Yup.string().required("Cannot be empty"),
   country: Yup.string().required("Cannot be empty"),
   city: Yup.string().required("Cannot be empty"),
   state: Yup.string().required("Cannot be empty"),
-});
-
-const validationSchemaPayment = Yup.object().shape({
   cardHolder: Yup.string().required(),
   cardNumber: Yup.string()
     .test(
@@ -42,9 +36,3 @@ const validationSchemaPayment = Yup.object().shape({
   expirationData: expirationDate,
   CVV: Yup.number().min(3).max(3).integer().required("Cannot be empty"),
 });
-
-export {
-  validationSchemaContact,
-  validationSchemaPayment,
-  validationSchemaShipping,
-};

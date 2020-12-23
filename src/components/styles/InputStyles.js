@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import * as theme from "../../../utils";
+import * as theme from "../../utils";
 
 export const InputStyles = styled.div`
   width: 90%;
