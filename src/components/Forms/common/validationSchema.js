@@ -22,4 +22,7 @@ export const validationSchemaForms = Yup.object({
   country: Yup.string().required("This field is mandatory"),
   city: Yup.string().required("This field is mandatory"),
   state: Yup.string().required("This field is mandatory"),
+  cardNumber: Yup.string(),
+  expirationDate: Yup.string(),
+  cvc: Yup.string(),
 });

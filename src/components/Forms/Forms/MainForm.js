@@ -32,6 +32,7 @@ const MainForm = () => {
         validationSchema={validationSchemaForms}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
+            console.log(values);
             alert(JSON.stringify(values, null, 5));
             setSubmitting(false);
           });
@@ -144,7 +145,21 @@ const MainForm = () => {
               <TextInput label="CVV" name="CVV" type="text" />
             </PaymentMethodsStyles>
             <BannerStyles /> */}
-            <Card />
+            <BannerStyles>
+              <p>Pay with Credit Card</p>
+              <CardStyles>
+                <img src={group} alt="creditCards" />
+              </CardStyles>
+            </BannerStyles>
+            <PaymentMethodsStyles>
+              <TextInput label="Card Holder" name="cardHolder" type="string" />
+              <Card
+                cardNumber={initialValues.cardNumber}
+                expirationDate={initialValues.expirationDate}
+                cvc={initialValues.cvc}
+              />
+            </PaymentMethodsStyles>
+            <BannerStyles />
           </>
 
           {/* Terms & Buttons */}
