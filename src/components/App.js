@@ -13,18 +13,20 @@ import {
 } from "./Forms";
 
 import * as main from "./styles";
+import MainPage from "./Forms/Forms/MainPage";
 
 const { MainContainer } = main;
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <MainContainer>
-      <Header />
+      {/* <Header />
       <ContactInformation />
       <ShippingForm />
       <BillingInformation />
       <PaymentInformation />
-      <Footer />
+      <Footer /> */}
+      <MainPage />
     </MainContainer>
     <GlobalStyle />
   </ThemeProvider>
