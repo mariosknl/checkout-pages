@@ -9,7 +9,7 @@ const OrderSummary = () => {
       <h1>Order Summary</h1>
       {[...Array(cubbitProduct)].map((item) => (
         <>
-          <h2 key={item.name}>{item.name}</h2>
+          <h2 key={item.id}>{item.name}</h2>
           <option value={item.qty}>{item.qty}</option>
           <img src={item.img} alt={item.name} />
           <ul
@@ -25,8 +25,8 @@ const OrderSummary = () => {
             <li>&#8364;{item.price}</li>
             <li>Shipping</li>
             <li>&#8364;0</li>
-            <li>Discount 44%</li>
-            <li>100</li>
+            <li>Discount {item.discount}</li>
+            <li>{Number(getPrice(item.price, item.discount))}</li>
           </ul>
           <hr />
           <ul
@@ -37,7 +37,7 @@ const OrderSummary = () => {
             }}
           >
             <li>Total</li>
-            <li>{item.price}</li>
+            <li></li>
           </ul>
         </>
       ))}
@@ -46,15 +46,3 @@ const OrderSummary = () => {
 };
 
 export default OrderSummary;
-
-{
-  /* <p>Cubbit Cell 1TB up to 4TB</p>
-        <p>&#8364;589</p>
-        <p>Shipping</p>
-        <p>&#8364;</p>
-        <p>Discount 44%</p>
-        <p>-&#8364;260</p>
-        <hr />
-        <p>Total</p>
-        <p>&#8364;329</p> */
-}
