@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 
 import { cubbitProduct, getPrice } from "./Cubbit";
 
+const qtyCounter = (state, newState) => {
+  return newState;
+};
+
 const OrderSummary = () => {
   const [qty, setQty] = useState(1);
+  const [cartItems, setCartItems] = useReducer(qtyCounter, 0);
+
+  const handleDecrement = () => setQty(qty - 1);
+
+  const handleIncrement = () => setQty(qty + 1);
+
   return (
     <>
       <h1>Order Summary</h1>
       {[...Array(cubbitProduct)].map((item) => (
         <>
           <h2 key={item.id}>{item.name}</h2>
-          <option value={item.qty}>{item.qty}</option>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <button onClick={handleDecrement}>-</button>
+            <p style={{ backgroundColor: "#ccc" }}>{qty}</p>
+            <button onClick={handleIncrement}>+</button>
+          </div>
           <img src={item.img} alt={item.name} />
           <ul
             style={{

@@ -14,8 +14,11 @@ const { MainContainer } = main;
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <MainContainer>
-      <Header />
-      {/* <MainForm /> */}
+      {/* <div>marios</div>
+      <div>
+        <Header />
+        <MainForm />
+      </div> */}
       <OrderSummary />
     </MainContainer>
     <GlobalStyle />
