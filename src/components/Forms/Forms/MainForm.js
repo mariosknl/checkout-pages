@@ -2,6 +2,10 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 
+import { getContactInfo } from "../../../reducers/contactSlice";
+import { getShippingInfo } from "../../../reducers/shippingSlice";
+import { getPaymentDetails } from "../../../reducers/paymentSlice";
+
 import {
   Checkbox,
   initialValues,
@@ -23,24 +27,55 @@ import {
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 
 import group from "../../../assets/group.png";
-import PaymentInputs from "../../Card/Card";
-import { contactInfo } from "../../../actions/contactInfo";
 
 const MainForm = () => {
   const dispatch = useDispatch();
-  // const contactInfo = useSelector((state) => state.contactInfo);
   return (
     <>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchemaForms}
-        onSubmit={(values, { setSubmitting }) => {
-          dispatch(contactInfo(values));
-          // setTimeout(() => {
-          //   console.log(values);
-          // });
-          setSubmitting(false);
-          alert(JSON.stringify(values, null, 5));
+        onSubmit={(values) => {
+          const {
+            email,
+            phoneNumber,
+            firstName,
+            lastName,
+            streetAddress,
+            otherInfo,
+            postalCode,
+            city,
+            state,
+            cardHolder,
+            cardNumber,
+            expirationDate,
+            cvv,
+          } = values;
+
+          const contactInfo = {
+            email,
+            phoneNumber,
+            firstName,
+            lastName,
+          };
+
+          const shippingInfo = {
+            streetAddress,
+            otherInfo,
+            postalCode,
+            city,
+            state,
+          };
+
+          const paymentInfo = {
+            cardHolder,
+            cardNumber,
+            expirationDate,
+            cvv,
+          };
+          dispatch(getContactInfo(contactInfo));
+          dispatch(getShippingInfo(shippingInfo));
+          dispatch(getPaymentDetails(paymentInfo));
         }}
       >
         <Form>

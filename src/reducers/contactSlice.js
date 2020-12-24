@@ -12,6 +12,7 @@ const contactSlice = createSlice({
   },
   reducers: {
     getContactInfo: (state, action) => {
+      console.log(action.payload);
       state.customerShippingInfo = action.payload;
     },
   },
