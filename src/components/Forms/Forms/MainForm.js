@@ -22,6 +22,7 @@ import {
   FooterStyles,
   FormStyles,
   FormStyles2,
+  MultipleInputStyles,
   PaymentMethodsStyles,
 } from "../../styles";
 
@@ -90,18 +91,20 @@ const MainForm = () => {
               name="phoneNumber"
               type="text"
             />
-            <TextInput
-              id="firstName"
-              label="First Name"
-              name="firstName"
-              type="text"
-            />
-            <TextInput
-              id="lastName"
-              label="Last Name"
-              name="lastName"
-              type="text"
-            />
+            <MultipleInputStyles>
+              <TextInput
+                id="firstName"
+                label="First Name"
+                name="firstName"
+                type="text"
+              />
+              <TextInput
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                type="text"
+              />
+            </MultipleInputStyles>
           </FormStyles>
 
           {/* Shipping Information */}

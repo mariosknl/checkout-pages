@@ -17,11 +17,15 @@ const FormStyles = styled.div`
 
   input {
     width: 100%;
-    margin-top: 10px;
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
+  }
+
+  label {
+    text-align: left;
+    font-size: 12px;
   }
 `;
 
@@ -38,25 +42,28 @@ const FormStyles2 = styled.div`
 
   input {
     width: 100%;
-    margin-top: 10px;
     padding: 10px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
+
+  label {
+    text-align: left;
+    font-size: 12px;
+  }
 `;
 
 const MultipleInputStyles = styled.div`
-  margin: 0 auto;
+  width: 40%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   input {
-    width: 70%;
-    margin: 0 auto;
+    padding: 10px;
   }
 
   label {
-    padding-left: 1rem;
+    font-size: 12px;
   }
 `;
 
