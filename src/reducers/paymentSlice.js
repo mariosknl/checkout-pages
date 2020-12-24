@@ -11,20 +11,6 @@ const paymentSlice = createSlice({
     cvv: "",
   },
   reducers: {},
-  extraReducers: {
-    [paymentInfo.pending]: (state, action) => {
-      state.status = "loading";
-    },
-    [paymentInfo.fulfilled]: (state, action) => ({
-      ...state,
-      status: "fulfilled",
-      paymentInfo: action.payload,
-    }),
-    [paymentInfo.rejected]: (state, action) => {
-      state.status = "failed";
-      state.error = action.error.message;
-    },
-  },
 });
 
 export default paymentSlice.reducer;

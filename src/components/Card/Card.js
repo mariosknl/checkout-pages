@@ -1,7 +1,7 @@
 import React from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 
-const PaymentInputs = () => {
+const PaymentInputs = ({ cardNumber, cvv, expirationDate }) => {
   const {
     meta,
     getCardNumberProps,

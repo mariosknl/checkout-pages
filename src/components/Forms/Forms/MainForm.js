@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   Checkbox,
@@ -22,20 +23,24 @@ import {
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 
 import group from "../../../assets/group.png";
-import Card from "../../Card/Card";
+import PaymentInputs from "../../Card/Card";
+import { contactInfo } from "../../../actions/contactInfo";
 
 const MainForm = () => {
+  const dispatch = useDispatch();
+  // const contactInfo = useSelector((state) => state.contactInfo);
   return (
     <>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchemaForms}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            console.log(values);
-            alert(JSON.stringify(values, null, 5));
-            setSubmitting(false);
-          });
+          dispatch(contactInfo(values));
+          // setTimeout(() => {
+          //   console.log(values);
+          // });
+          setSubmitting(false);
+          alert(JSON.stringify(values, null, 5));
         }}
       >
         <Form>
@@ -131,11 +136,24 @@ const MainForm = () => {
             </BannerStyles>
             <PaymentMethodsStyles>
               <TextInput label="Card Holder" name="cardHolder" type="string" />
-              <Card
+              {/* <PaymentInputs
                 cardNumber={initialValues.cardNumber}
                 expirationDate={initialValues.expirationDate}
                 cvv={initialValues.cvv}
+              /> */}
+              <TextInput
+                id="cardNumber"
+                name="cardNumber"
+                label="Card Number"
+                type="text"
               />
+              <TextInput
+                id="expirationDate"
+                name="expirationDate"
+                label="Expiration Date"
+                type="text"
+              />
+              <TextInput id="cvv" name="cvv" label="CVV" type="text" />
             </PaymentMethodsStyles>
             <BannerStyles />
           </>
