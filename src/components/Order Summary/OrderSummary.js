@@ -26,7 +26,10 @@ const OrderSummary = () => {
             <li>Shipping</li>
             <li>&#8364;0</li>
             <li>Discount {item.discount}</li>
-            <li>{Number(getPrice(item.price, item.discount))}</li>
+            <li>
+              {item.price -
+                Number(getPrice(item.price, item.discount)).toFixed(0)}
+            </li>
           </ul>
           <hr />
           <ul
@@ -37,7 +40,7 @@ const OrderSummary = () => {
             }}
           >
             <li>Total</li>
-            <li></li>
+            <li>{Number(getPrice(item.price, item.discount)).toFixed(0)}</li>
           </ul>
         </>
       ))}

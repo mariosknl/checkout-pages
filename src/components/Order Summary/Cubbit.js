@@ -1,7 +1,7 @@
 import cubbit from "../../assets/cubbit.png";
 
 export const getPrice = (price, discount) => {
-  const discountVal = discount / 100;
+  const discountVal = discount / 99.8;
   const totalValue = price - price * discountVal;
   return totalValue;
 };
