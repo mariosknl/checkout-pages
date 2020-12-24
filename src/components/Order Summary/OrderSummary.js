@@ -1,8 +1,8 @@
-import React, { useReducer, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addProduct, removeProduct } from "../../reducers/cartSlice";
-import { getPrice } from "./Cubbit";
+import { getPrice } from "./getPrice";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
