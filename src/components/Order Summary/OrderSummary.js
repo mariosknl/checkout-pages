@@ -7,12 +7,14 @@ import { cubbitProduct, getPrice } from "./Cubbit";
 const OrderSummary = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cartInfo.products);
+  console.log(products);
 
   const totalPrice = products.reduce((acc, item) => acc + item.price, 0);
 
   const handleIncrement = (item) => dispatch(addProduct(item));
   const handleDecrement = (item) => dispatch(removeProduct(item));
-  const displayedProducts = [];
+  const displayedProducts = [...products];
+  console.log(displayedProducts);
 
   return (
     <>
