@@ -9,7 +9,7 @@ import {
   CartContainerStyles,
   CartInnerContainerStyles,
   ListStyles,
-} from "../styles/OrderSummaryStyles";
+} from "../styles/OrderStyles/OrderSummaryStyles";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
@@ -55,6 +55,7 @@ const OrderSummary = () => {
                   <li>&#8364;0</li>
                   <li>Discount {item.discount}%</li>
                   <li>
+                    -&#8364;
                     {item.price -
                       Number(getPrice(item.price, totalDiscount)).toFixed(0)}
                   </li>
@@ -63,6 +64,7 @@ const OrderSummary = () => {
                 <ListStyles>
                   <li>Total</li>
                   <li>
+                    &#8364;
                     {totalPrice -
                       item.price +
                       Number(getPrice(item.price, totalDiscount).toFixed(0))}

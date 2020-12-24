@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-import { blue } from "../../utils/colors";
+import { blue } from "../../../utils";
 const CartContainerStyles = styled.div`
+  width: 90%;
+  height: 40%;
+  background-color: white;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
 `;
 
 const CartInnerContainerStyles = styled.div`
@@ -42,12 +47,15 @@ const ButtonStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 
     p {
-      background-color: #ccc;
+      background-color: white;
       cursor: none;
       font-size: 16px;
       padding: 9px;
+      margin-block: 0;
     }
 
     button {
@@ -63,7 +71,6 @@ const ListStyles = styled.ul`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 50px;
-  list-style-type: none;
   padding-inline-start: 0;
   gap: 20px;
 

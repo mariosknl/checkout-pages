@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { cubbitProduct } from "../components/Order Summary/Cubbit";
+import { cubbitProduct } from "../components/OrderSummary/Cubbit";
 
 const cartSlice = createSlice({
   name: "cartInfo",

@@ -5,22 +5,20 @@ import { defaultTheme, GlobalStyle } from "../utils";
 
 import Header from "./Header/Header";
 
-import * as main from "./styles";
+import { MainContainerStyles } from "./styles";
 import MainForm from "./Forms/Forms/MainForm";
-import OrderSummary from "./Order Summary/OrderSummary";
-
-const { MainContainer } = main;
+import Order from "./OrderSummary/Order";
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
-    <MainContainer>
+    <MainContainerStyles>
       <div>marios</div>
       <div>
         <Header />
         <MainForm />
       </div>
-      <OrderSummary />
-    </MainContainer>
+      <Order />
+    </MainContainerStyles>
     <GlobalStyle />
   </ThemeProvider>
 );
