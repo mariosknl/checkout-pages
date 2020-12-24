@@ -25,7 +25,7 @@ const OrderSummary = () => {
 
   return (
     <div>
-      <h2>Order Summary</h2>
+      <h2 style={{ marginLeft: "2rem" }}>Order Summary</h2>
       <CartContainerStyles>
         {displayedProducts.map((item) => {
           if (displayedProducts.includes(item.id)) {

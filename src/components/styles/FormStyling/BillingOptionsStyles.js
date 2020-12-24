@@ -4,18 +4,13 @@ import * as theme from "../../../utils";
 
 const BillingOptionsStyles = styled.div`
   border: 1px solid ${theme.black[300]};
-  width: 100%;
+  width: 90%;
+  margin: 0;
 
   p {
     width: 90%;
     margin: 1rem auto;
     font-size: ${theme.typeScale.paragraph};
-  }
-
-  form {
-    width: 90%;
-    display: flex;
-    align-items: center;
   }
 
   input {

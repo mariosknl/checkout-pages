@@ -146,6 +146,10 @@ const MainForm = () => {
           {/* Shipping Options */}
           <h2>Billing Information</h2>
           <BillingOptionsStyles>
+            <p>
+              Please provide us with your billing information, so we can send
+              you an invoice after order confirmation.
+            </p>
             <Checkbox
               id="shippingAddress"
               name="picked1"

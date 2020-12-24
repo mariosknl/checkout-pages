@@ -3,11 +3,16 @@ import styled from "styled-components";
 import * as theme from "../../../utils";
 
 const PaymentMethodsStyles = styled.div`
-  border: 1px solid black;
-  width: 90%;
+  width: 70%;
+  margin: 1rem 3.5rem;
 
   input {
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid ${theme.black[300]};
+    border-radius: 4px;
   }
 
   label {
@@ -26,7 +31,7 @@ const BannerStyles = styled.div`
   p {
     font-size: ${theme.typeScale.small};
     font-weight: ${theme.fontWeight.bold};
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
 `;
 
