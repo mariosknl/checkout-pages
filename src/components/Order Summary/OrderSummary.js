@@ -10,6 +10,7 @@ const OrderSummary = () => {
 
   const totalPrice = products.reduce((acc, item) => acc + item.price, 0);
   const totalDiscount = products.reduce((acc, item) => acc + item.discount, 0);
+  const totalProducts = products.reduce((acc, item) => acc + item.id, 0);
 
   const handleIncrement = (item) => dispatch(addProduct(item));
   const handleDecrement = (item) => dispatch(removeProduct(item));
@@ -34,7 +35,7 @@ const OrderSummary = () => {
                 }}
               >
                 <button onClick={() => handleDecrement(item)}>-</button>
-                <p style={{ backgroundColor: "#ccc" }}>{}</p>
+                <p style={{ backgroundColor: "#ccc" }}>{totalProducts}</p>
                 <button onClick={() => handleIncrement(item)}>+</button>
               </div>
               <img src={item.img} alt={item.name} />
@@ -44,7 +45,6 @@ const OrderSummary = () => {
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
                   listStyleType: "none",
-                  borderBottom: "1px solid #000",
                 }}
               >
                 <li>{item.description}</li>
