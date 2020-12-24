@@ -9,6 +9,7 @@ export const black = {
   400: "#161616",
   500: "#363636",
   600: "#F4F4F4",
+  700: "#B0B6BA",
 };
 
 export const red = {
