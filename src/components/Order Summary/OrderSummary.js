@@ -59,7 +59,7 @@ const OrderSummary = () => {
                       Number(getPrice(item.price, totalDiscount)).toFixed(0)}
                   </li>
                 </ListStyles>
-                <hr />
+                <hr className="lists" />
                 <ListStyles>
                   <li>Total</li>
                   <li>

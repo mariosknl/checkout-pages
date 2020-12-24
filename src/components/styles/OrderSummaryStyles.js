@@ -18,6 +18,12 @@ const CartInnerContainerStyles = styled.div`
 
   img {
     width: 40%;
+    margin-bottom: 2rem;
+  }
+
+  .lists {
+    width: 100%;
+    border: 1px solid #ccc;
   }
 `;
 
@@ -29,7 +35,7 @@ const ButtonStyles = styled.div`
   align-items: center;
 
   h2 {
-    color: ${blue[400]}
+    color: ${blue[400]};
   }
 
   .buttons {
@@ -51,14 +57,19 @@ const ButtonStyles = styled.div`
       padding: 10px;
     }
   }
-  }
 `;
 
 const ListStyles = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 50px;
   list-style-type: none;
+  padding-inline-start: 0;
+  gap: 20px;
+
+  .firstList {
+    border-bottom: 1px solid #ccc;
+  }
 `;
 
 export {
