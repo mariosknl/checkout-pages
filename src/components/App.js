@@ -14,11 +14,11 @@ const { MainContainer } = main;
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <MainContainer>
-      {/* <div>marios</div>
+      <div>marios</div>
       <div>
         <Header />
         <MainForm />
-      </div> */}
+      </div>
       <OrderSummary />
     </MainContainer>
     <GlobalStyle />

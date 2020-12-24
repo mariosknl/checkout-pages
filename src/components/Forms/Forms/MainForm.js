@@ -134,7 +134,7 @@ const MainForm = () => {
               <Card
                 cardNumber={initialValues.cardNumber}
                 expirationDate={initialValues.expirationDate}
-                cvc={initialValues.cvc}
+                cvv={initialValues.cvv}
               />
             </PaymentMethodsStyles>
             <BannerStyles />

@@ -12,5 +12,5 @@ export const initialValues = {
   cardHolder: "",
   cardNumber: "",
   expirationDate: "",
-  cvc: "",
+  cvv: "",
 };

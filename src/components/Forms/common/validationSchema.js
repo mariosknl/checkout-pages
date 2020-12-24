@@ -24,5 +24,5 @@ export const validationSchemaForms = Yup.object({
   state: Yup.string().required("This field is mandatory"),
   cardNumber: Yup.string(),
   expirationDate: Yup.string(),
-  cvc: Yup.string(),
+  cvv: Yup.string(),
 });
