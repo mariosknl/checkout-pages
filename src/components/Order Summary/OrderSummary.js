@@ -2,19 +2,18 @@ import React, { useReducer, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addProduct, removeProduct } from "../../reducers/cartSlice";
-import { cubbitProduct, getPrice } from "./Cubbit";
+import { getPrice } from "./Cubbit";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cartInfo.products);
-  console.log(products);
 
   const totalPrice = products.reduce((acc, item) => acc + item.price, 0);
+  const totalDiscount = products.reduce((acc, item) => acc + item.discount, 0);
 
   const handleIncrement = (item) => dispatch(addProduct(item));
   const handleDecrement = (item) => dispatch(removeProduct(item));
   const displayedProducts = [...products];
-  console.log(displayedProducts);
 
   return (
     <>
@@ -49,13 +48,13 @@ const OrderSummary = () => {
                 }}
               >
                 <li>{item.description}</li>
-                <li>&#8364;{item.price}</li>
+                <li>&#8364;{totalPrice}</li>
                 <li>Shipping</li>
                 <li>&#8364;0</li>
                 <li>Discount {item.discount}%</li>
                 <li>
                   {item.price -
-                    Number(getPrice(item.price, item.discount)).toFixed(0)}
+                    Number(getPrice(item.price, totalDiscount)).toFixed(0)}
                 </li>
               </ul>
               <hr />
@@ -67,7 +66,11 @@ const OrderSummary = () => {
                 }}
               >
                 <li>Total</li>
-                <li>{totalPrice}</li>
+                <li>
+                  {totalPrice -
+                    item.price +
+                    Number(getPrice(item.price, totalDiscount).toFixed(0))}
+                </li>
               </ul>
             </div>
           );
