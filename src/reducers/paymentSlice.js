@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import paymentInfo from "../actions/paymentInfo";
-
 const paymentSlice = createSlice({
-  name: "contactInfo",
+  name: "paymentInfo",
   initialState: {
-    cardHolder: "",
-    cardNumber: "",
-    expirationDate: "",
-    cvv: "",
+    paymentDetails: {
+      cardHolder: "",
+      cardNumber: "",
+      expirationDate: "",
+      cvv: "",
+    },
   },
-  reducers: {},
+  reducers: {
+    getPaymentDetails: (state, action) => {
+      state.paymentDetails = action.payload;
+    },
+  },
 });
+
+export const { getPaymentDetails } = paymentSlice.actions;
 
 export default paymentSlice.reducer;

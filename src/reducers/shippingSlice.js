@@ -1,18 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import shippingInfo from "../actions/shippingInfo";
-
 const shippingSlice = createSlice({
   name: "contactInfo",
   initialState: {
-    streetAddress: "",
-    otherInfo: "",
-    postalCode: "",
-    country: "",
-    city: "",
-    state: "",
+    customerAddress: {
+      streetAddress: "",
+      otherInfo: "",
+      postalCode: "",
+      country: "",
+      city: "",
+      state: "",
+    },
   },
-  reducers: {},
+  reducers: {
+    getShippingInfo: (state, action) => {
+      state.customerAddress = action.payload;
+    },
+  },
 });
+
+export const { getShippingInfo } = shippingSlice.actions;
 
 export default shippingSlice.reducer;

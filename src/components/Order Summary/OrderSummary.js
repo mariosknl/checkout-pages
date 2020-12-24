@@ -24,6 +24,7 @@ const OrderSummary = () => {
           return "";
         } else {
           displayedProducts.push(item.id);
+
           return (
             <div key={item.id}>
               <h2>{item.name}</h2>

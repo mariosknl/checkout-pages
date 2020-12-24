@@ -136,11 +136,6 @@ const MainForm = () => {
             </BannerStyles>
             <PaymentMethodsStyles>
               <TextInput label="Card Holder" name="cardHolder" type="string" />
-              {/* <PaymentInputs
-                cardNumber={initialValues.cardNumber}
-                expirationDate={initialValues.expirationDate}
-                cvv={initialValues.cvv}
-              /> */}
               <TextInput
                 id="cardNumber"
                 name="cardNumber"

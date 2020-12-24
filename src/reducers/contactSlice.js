@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { contactInfo } from "../actions/contactInfo";
-
 const contactSlice = createSlice({
   name: "contactInfo",
   initialState: {
-    email: "",
-    phoneNumber: "",
-    firstName: "",
-    lastName: "",
+    customerShippingInfo: {
+      email: "",
+      phoneNumber: "",
+      firstName: "",
+      lastName: "",
+    },
   },
-  reducers: {},
+  reducers: {
+    getContactInfo: (state, action) => {
+      state.customerShippingInfo = action.payload;
+    },
+  },
 });
+
+export const { getContactInfo } = contactSlice.actions;
 
 export default contactSlice.reducer;

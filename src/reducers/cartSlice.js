@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { cartInfo } from "../actions/contactInfo";
 import { cubbitProduct } from "../components/Order Summary/Cubbit";
 
 const cartSlice = createSlice({
