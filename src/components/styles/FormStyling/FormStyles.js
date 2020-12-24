@@ -6,8 +6,22 @@ const { defaultTheme } = theme;
 
 const FormStyles = styled.div`
   width: 90%;
+  height: 280px;
   padding: 14px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  border: 1px solid ${defaultTheme.borderColor};
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+`;
+
+const FormStyles2 = styled.div`
+  width: 90%;
+  height: 394px;
+  padding: 14px;
+  margin: 2rem auto;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
   text-align: center;
@@ -35,4 +49,4 @@ const MultipleInputStyles = styled.div`
   }
 `;
 
-export { ErrorMessage, FormStyles, MultipleInputStyles };
+export { ErrorMessage, FormStyles, FormStyles2, MultipleInputStyles };

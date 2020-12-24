@@ -21,6 +21,7 @@ import {
   CardStyles,
   FooterStyles,
   FormStyles,
+  FormStyles2,
   PaymentMethodsStyles,
 } from "../../styles";
 
@@ -80,6 +81,7 @@ const MainForm = () => {
       >
         <Form>
           {/* Contact Information */}
+          <h2>Contact Information</h2>
           <FormStyles>
             <TextInput id="email" label="Email" name="email" type="text" />
             <TextInput
@@ -103,7 +105,8 @@ const MainForm = () => {
           </FormStyles>
 
           {/* Shipping Information */}
-          <FormStyles>
+          <h2>Shipping Information</h2>
+          <FormStyles2>
             <TextInput
               id="streetAddress"
               label="Street Address"
@@ -138,9 +141,10 @@ const MainForm = () => {
               name="state"
               type="text"
             />
-          </FormStyles>
+          </FormStyles2>
 
           {/* Shipping Options */}
+          <h2>Billing Information</h2>
           <BillingOptionsStyles>
             <Checkbox
               id="shippingAddress"
@@ -163,6 +167,7 @@ const MainForm = () => {
           {/* Payment Methods */}
 
           <>
+            <h2>Payment Methods</h2>
             <BannerStyles>
               <p>Pay with Credit Card</p>
               <CardStyles>
@@ -191,17 +196,21 @@ const MainForm = () => {
           {/* Terms & Buttons */}
 
           <FooterStyles>
+            <Checkbox name="terms" type="checkbox">
+              I agree to the <span>Terms and Conditions</span> and the{" "}
+              <span>Privacy Policy</span>
+            </Checkbox>
             <ButtonStyles>
               <SecondaryButton modifiers="small">Back</SecondaryButton>
               <PrimaryButton modifiers="large" type="submit">
                 Buy Now
               </PrimaryButton>
             </ButtonStyles>
-            <Checkbox name="terms" type="checkbox">
+            <p>
               By clicking the button 'Buy Now', I agree to the{" "}
               <span>Terms and Conditions</span> and the{" "}
               <span>Privacy Policy</span>
-            </Checkbox>
+            </p>
           </FooterStyles>
         </Form>
       </Formik>

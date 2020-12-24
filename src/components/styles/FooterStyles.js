@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { typeScale, blue, black } from "../../utils";
 
 const FooterStyles = styled.div`
-  width: 100%;
+  width: 90%;
   height: 300px;
 
   input {

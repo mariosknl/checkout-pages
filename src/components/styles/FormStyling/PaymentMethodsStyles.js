@@ -4,14 +4,19 @@ import * as theme from "../../../utils";
 
 const PaymentMethodsStyles = styled.div`
   border: 1px solid black;
+  width: 90%;
 
   input {
     width: 100%;
   }
+
+  label {
+    font-size: 14px;
+  }
 `;
 
 const BannerStyles = styled.div`
-  width: 100%;
+  width: 90%;
   height: 48px;
   background-color: ${theme.black[600]};
   display: flex;
@@ -26,7 +31,7 @@ const BannerStyles = styled.div`
 `;
 
 const CardStyles = styled.div`
-  width: 100px;
+  width: 90px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
