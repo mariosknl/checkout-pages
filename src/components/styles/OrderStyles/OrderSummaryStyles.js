@@ -32,7 +32,7 @@ const CartInnerContainerStyles = styled.div`
   }
 `;
 
-const ButtonStyles = styled.div`
+const OrderButtonStyles = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -80,7 +80,7 @@ const ListStyles = styled.ul`
 `;
 
 export {
-  ButtonStyles,
+  OrderButtonStyles,
   CartContainerStyles,
   CartInnerContainerStyles,
   ListStyles,

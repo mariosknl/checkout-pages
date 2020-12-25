@@ -1,17 +1,21 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./Header/Header";
 
-import App from "./App";
 import NotFound from "./pages/NotFound";
+import OrderPage from "./pages/OrderPage";
 import ThankYou from "./pages/ThankYou";
 
 const RouteFile = () => {
   return (
-    <Switch>
-      <Route path="/thanks" component={ThankYou} />
-      <Route exact path="/" component={App} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/thanks" component={ThankYou} />
+        <Route exact path="/" component={OrderPage} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 };
 

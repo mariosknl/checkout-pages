@@ -63,7 +63,6 @@ const MainForm = () => {
             cardNumber,
             expirationDate,
             cvv,
-            terms,
           } = values;
 
           const contactInfo = {
@@ -150,6 +149,7 @@ const MainForm = () => {
               </div>
 
               <SelectCountry label="Country" id="country" name="country">
+                <option value="">Select Country</option>
                 {countryNames.map((country) => (
                   <option
                     key={country.name}
@@ -248,6 +248,7 @@ const MainForm = () => {
               I agree to the <span>Terms and Conditions</span> and the{" "}
               <span>Privacy Policy</span>
             </Checkbox>
+            {/* {error && <div className="error">There are errors in the page</div>} */}
             <ButtonStyles>
               <SecondaryButton modifiers="small">Back</SecondaryButton>
               <PrimaryButton modifiers="large" type="submit">

@@ -5,7 +5,7 @@ import { addProduct, removeProduct } from "../../reducers/cartSlice";
 import { getPrice } from "./getPrice";
 
 import {
-  ButtonStyles,
+  OrderButtonStyles,
   CartContainerStyles,
   CartInnerContainerStyles,
   ListStyles,
@@ -35,7 +35,7 @@ const OrderSummary = () => {
 
             return (
               <CartInnerContainerStyles key={item.id}>
-                <ButtonStyles>
+                <OrderButtonStyles>
                   <h2>{item.name}</h2>
                   <div className="buttons">
                     <button onClick={() => handleDecrement(item)} type="button">
@@ -46,7 +46,7 @@ const OrderSummary = () => {
                       +
                     </button>
                   </div>
-                </ButtonStyles>
+                </OrderButtonStyles>
                 <img src={item.img} alt={item.name} />
                 <ListStyles>
                   <li>{item.description}</li>
