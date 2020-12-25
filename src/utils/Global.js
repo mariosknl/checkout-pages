@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { primaryFont } from "./typography";
 import { normalize } from "polished";
+import { red } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize()}
@@ -25,5 +26,10 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style-type: none;
+  }
+
+  .error {
+    color: ${red[400]};
+    padding-left: 20px;
   }
 `;

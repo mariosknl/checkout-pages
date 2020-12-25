@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import { getContactInfo } from "../../../reducers/contactSlice";
 import { getShippingInfo } from "../../../reducers/shippingSlice";
@@ -34,6 +35,7 @@ import group from "../../../assets/group.png";
 
 const MainForm = () => {
   const [checked, setChecked] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
 
   const handleCheck = (e) => {
@@ -42,6 +44,7 @@ const MainForm = () => {
 
   return (
     <>
+      {redirect ? <Redirect to="/thanks" /> : ""}
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchemaForms}
@@ -87,6 +90,7 @@ const MainForm = () => {
           dispatch(getContactInfo(contactInfo));
           dispatch(getShippingInfo(shippingInfo));
           dispatch(getPaymentDetails(paymentInfo));
+          setRedirect(true);
         }}
       >
         <Form>
