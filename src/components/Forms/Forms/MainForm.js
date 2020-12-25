@@ -216,7 +216,12 @@ const MainForm = () => {
               </CardStyles>
             </BannerStyles>
             <PaymentMethodsStyles>
-              <TextInput label="Card Holder" name="cardHolder" type="string" />
+              <TextInput
+                id="cardHolder"
+                label="Card Holder"
+                name="cardHolder"
+                type="string"
+              />
               <TextInput
                 id="cardNumber"
                 name="cardNumber"
