@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { getContactInfo } from "../../../reducers/contactSlice";
 import { getShippingInfo } from "../../../reducers/shippingSlice";
 import { getPaymentDetails } from "../../../reducers/paymentSlice";
+import { countryNames } from "../common/selectCountryFunc";
 
 import {
   Checkbox,
@@ -145,13 +146,15 @@ const MainForm = () => {
               </div>
 
               <SelectCountry label="Country" id="country" name="country">
-                <option value="">Select Country</option>
-                <option id="italy" value="italy">
-                  Italy
-                </option>
-                <option id="greece" value="greece">
-                  Greece
-                </option>
+                {countryNames.map((country) => (
+                  <option
+                    key={country.name}
+                    id={country.name}
+                    value={country.name}
+                  >
+                    {country.name}
+                  </option>
+                ))}
               </SelectCountry>
             </MultipleInputStyles>
             <MultipleInputStyles>
