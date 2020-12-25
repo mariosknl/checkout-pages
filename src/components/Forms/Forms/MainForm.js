@@ -59,6 +59,7 @@ const MainForm = () => {
             cardNumber,
             expirationDate,
             cvv,
+            terms,
           } = values;
 
           const contactInfo = {

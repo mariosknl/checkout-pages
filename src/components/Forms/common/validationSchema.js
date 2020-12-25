@@ -1,4 +1,4 @@
-import { date, object, string } from "yup";
+import { boolean, date, object, string } from "yup";
 
 export const validationSchemaForms = object({
   email: string()
@@ -29,4 +29,7 @@ export const validationSchemaForms = object({
     .required("Credit card expiration date is required")
     .min(new Date(), "Credit card is expired"),
   cvv: string().min(3).max(3).required("CVC is required"),
+  terms: boolean().required(
+    "You have to accept the terms before submitting your order."
+  ),
 });
