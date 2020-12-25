@@ -112,7 +112,7 @@ const MainForm = () => {
           </FormStyles>
 
           {/* Shipping Information */}
-          <h2>Shipping Information</h2>
+          <h2>Shipping Address</h2>
           <FormStyles2>
             <TextInput
               id="streetAddress"
@@ -126,28 +126,39 @@ const MainForm = () => {
               name="otherInfo"
               type="text"
             />
-            <TextInput
-              label="Postal Code"
-              id="postalCode"
-              name="postalCode"
-              type="text"
-            />
-            <SelectCountry label="Country" id="country" name="country">
-              <option value="">Select Country</option>
-              <option id="italy" value="italy">
-                Italy
-              </option>
-              <option id="greece" value="greece">
-                Greece
-              </option>
-            </SelectCountry>
-            <TextInput label="City" id="city" name="city" type="text" />
-            <TextInput
-              label="State/Region"
-              id="state"
-              name="state"
-              type="text"
-            />
+            <MultipleInputStyles>
+              <div>
+                <TextInput
+                  label="Postal Code"
+                  id="postalCode"
+                  name="postalCode"
+                  type="text"
+                />
+              </div>
+
+              <SelectCountry label="Country" id="country" name="country">
+                <option value="">Select Country</option>
+                <option id="italy" value="italy">
+                  Italy
+                </option>
+                <option id="greece" value="greece">
+                  Greece
+                </option>
+              </SelectCountry>
+            </MultipleInputStyles>
+            <MultipleInputStyles>
+              <div>
+                <TextInput label="City" id="city" name="city" type="text" />
+              </div>
+              <div>
+                <TextInput
+                  label="State/Region"
+                  id="state"
+                  name="state"
+                  type="text"
+                />
+              </div>
+            </MultipleInputStyles>
           </FormStyles2>
 
           {/* Shipping Options */}

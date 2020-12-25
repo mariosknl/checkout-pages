@@ -13,6 +13,7 @@ const FormStyles = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 3rem;
 
   input {
     width: 90%;
@@ -32,25 +33,57 @@ const FormStyles = styled.div`
 
 const FormStyles2 = styled.div`
   width: 90%;
-  height: 40vh;
+  height: 42vh;
   padding: 14px;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 3rem;
 
   input {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin: 10px auto;
+    padding: 8px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
 
+  #postalCode {
+    width: 70%;
+  }
+
+  select {
+    width: 89%;
+    margin-top: 0.6rem;
+    margin-right: 2rem;
+    padding: 5px;
+    border: 1px solid ${theme.black[300]};
+    border-radius: 4px;
+  }
+
+  #countryLabel {
+    padding-left: 0;
+  }
+
+  #postalCode {
+    width: 70%;
+  }
+
   label {
-    text-align: left;
+    padding-left: 20px;
     font-size: 12px;
+  }
+
+  #city {
+    width: 76%;
+    margin-right: 5rem;
+  }
+
+  #state {
+    width: 80%;
   }
 `;
 
