@@ -12,7 +12,7 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },
-    "@storybook/addon-essentials",
     "@storybook/addon-a11y/register",
+    "@storybook/addon-essentials",
   ],
 };

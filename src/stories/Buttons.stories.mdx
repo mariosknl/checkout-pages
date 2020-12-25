@@ -1,4 +1,5 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
 import { PrimaryButton, SecondaryButton } from "../components/ui/Buttons.js";
 
 <Meta title="Buttons" component={PrimaryButton} />
@@ -17,11 +18,11 @@ Primary buttons are used as a call to action like submitting the form and indica
 
 <Preview withToolbar>
   <Story name="primary">
-    <PrimaryButton>Buy Now</PrimaryButton>
+    <PrimaryButton onClick={action("button-click")}>Buy Now</PrimaryButton>
   </Story>
 </Preview>
 
-## Secondary Buttons
+<!-- ## Secondary Buttons
 
 Primary buttons are used as a call to action and indicate the important actions on a page.
 
@@ -29,4 +30,4 @@ Primary buttons are used as a call to action and indicate the important actions 
   <Story name="secondary">
     <SecondaryButton>Back</SecondaryButton>
   </Story>
-</Preview>
+</Preview> -->
