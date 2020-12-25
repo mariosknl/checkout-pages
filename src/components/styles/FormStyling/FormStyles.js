@@ -98,9 +98,6 @@ const MultipleInputStyles = styled.div`
     width: 80%;
     margin-left: 20px;
   }
-
-  label {
-  }
 `;
 
 export { FormStyles, FormStyles2, MultipleInputStyles };

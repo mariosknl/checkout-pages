@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { getContactInfo } from "../../../reducers/contactSlice";
 import { getShippingInfo } from "../../../reducers/shippingSlice";
@@ -23,6 +23,7 @@ import {
   FormStyles,
   FormStyles2,
   MultipleInputStyles,
+  PaymentMethodStylesInputs,
   PaymentMethodsStyles,
 } from "../../styles";
 
@@ -31,7 +32,13 @@ import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 import group from "../../../assets/group.png";
 
 const MainForm = () => {
+  const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
+
+  const handleCheck = (e) => {
+    setChecked(true);
+  };
+
   return (
     <>
       <Formik
@@ -170,17 +177,21 @@ const MainForm = () => {
             </p>
             <Checkbox
               id="shippingAddress"
-              name="picked1"
+              name="picked"
               type="radio"
               value="shippingAddress"
+              checked={checked}
+              onClick={handleCheck}
             >
               Use my shipping address
             </Checkbox>
             <Checkbox
               id="shippingDifAddress"
-              name="picked2"
+              name="picked"
               type="radio"
               value="shippingDifAddress"
+              checked={checked}
+              onClick={handleCheck}
             >
               Use a different address
             </Checkbox>
@@ -204,13 +215,19 @@ const MainForm = () => {
                 label="Card Number"
                 type="text"
               />
-              <TextInput
-                id="expirationDate"
-                name="expirationDate"
-                label="Expiration Date"
-                type="text"
-              />
-              <TextInput id="cvv" name="cvv" label="CVV" type="text" />
+              <PaymentMethodStylesInputs>
+                <div>
+                  <TextInput
+                    id="expirationDate"
+                    name="expirationDate"
+                    label="Expiration Date"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <TextInput id="cvv" name="cvv" label="CVV" type="text" />
+                </div>
+              </PaymentMethodStylesInputs>
             </PaymentMethodsStyles>
             <BannerStyles />
           </>

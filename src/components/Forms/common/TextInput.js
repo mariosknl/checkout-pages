@@ -10,7 +10,7 @@ export const TextInput = ({ label, ...props }) => {
       <label htmlFor={props.id || props.name}>{label}</label>
       <input {...field} {...props} />
       {meta.touched && meta.error ? (
-        <div className={red[400]}>{meta.error}</div>
+        <div className="error">{meta.error}</div>
       ) : null}
     </>
   );

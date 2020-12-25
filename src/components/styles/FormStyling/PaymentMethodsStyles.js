@@ -4,19 +4,39 @@ import * as theme from "../../../utils";
 
 const PaymentMethodsStyles = styled.div`
   width: 70%;
-  margin: 1rem 3.5rem;
+  margin: 1rem 3rem;
 
   input {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 0;
     padding: 10px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
 
   label {
-    font-size: 14px;
+    font-size: 12px;
+  }
+`;
+
+const PaymentMethodStylesInputs = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin: 0 auto; */
+
+  input {
+    width: 80%;
+  }
+
+  label {
+    padding-left: 5px;
+  }
+
+  #cvv {
+    width: 80%;
   }
 `;
 
@@ -43,4 +63,9 @@ const CardStyles = styled.div`
   margin-right: 2rem;
 `;
 
-export { BannerStyles, CardStyles, PaymentMethodsStyles };
+export {
+  BannerStyles,
+  CardStyles,
+  PaymentMethodStylesInputs,
+  PaymentMethodsStyles,
+};
