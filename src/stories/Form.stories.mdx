@@ -34,7 +34,7 @@ This is a complete form using TextInput, Checkbox, SelectCountry and Primary But
           firstName: Yup.string().required("This field is mandatory"),
           lastName: Yup.string().required("This field is mandatory"),
           country: Yup.string().required("This field is mandatory"),
-          terms: Yup.boolean().oneOf([true], "Agree to the terms"),
+          terms: Yup.boolean().oneOf([true], "You have to agree to the terms"),
         })}
       >
         {(formik) => (

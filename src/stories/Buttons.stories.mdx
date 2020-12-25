@@ -18,16 +18,20 @@ Primary buttons are used as a call to action like submitting the form and indica
 
 <Preview withToolbar>
   <Story name="primary">
-    <PrimaryButton onClick={action("button-click")}>Buy Now</PrimaryButton>
+    <PrimaryButton onClick={action("primary-button-clicked")}>
+      Buy Now
+    </PrimaryButton>
   </Story>
 </Preview>
 
-<!-- ## Secondary Buttons
+## Secondary Buttons
 
 Primary buttons are used as a call to action and indicate the important actions on a page.
 
 <Preview withToolbar>
   <Story name="secondary">
-    <SecondaryButton>Back</SecondaryButton>
+    <SecondaryButton onClick={action("secondary-button-clicked")}>
+      Back
+    </SecondaryButton>
   </Story>
-</Preview> -->
+</Preview>

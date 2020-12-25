@@ -226,6 +226,7 @@ const MainForm = () => {
                     name="expirationDate"
                     label="Expiration Date"
                     type="text"
+                    placeholder="MM/YY"
                   />
                 </div>
                 <div>
