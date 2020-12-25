@@ -1,0 +1,39 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { TextInput } from "../components/Forms/common/TextInput.js";
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+<Meta title="TextInput" component={TextInput} />
+
+# Inputs
+
+Input field controlled by Formik.
+
+## Usage
+
+TextInput is a custom component using `useField()` which is a React Hook provided by `Formik`.
+`useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. We are using `Yup` package for validating our input data and display the error just beneath the input only if it exists and when focus is lost.
+
+## TextInput
+
+TextInput components are used to retrieve data from users on a page and inside forms.
+
+<Preview withToolbar>
+  <Story name="TextInput">
+    <Formik
+      initialValues={{ firstName: "" }}
+      validationSchema={Yup.object({
+        firstName: Yup.string()
+          .max(15, "Must be 15 characters or less")
+          .required("This field is mandatory"),
+      })}
+    >
+      <TextInput
+        id="firstName"
+        name="firstName"
+        type="text"
+        label="First Name"
+      />
+    </Formik>
+  </Story>
+</Preview>
