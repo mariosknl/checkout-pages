@@ -92,18 +92,22 @@ const MainForm = () => {
               type="text"
             />
             <MultipleInputStyles>
-              <TextInput
-                id="firstName"
-                label="First Name"
-                name="firstName"
-                type="text"
-              />
-              <TextInput
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                type="text"
-              />
+              <div>
+                <TextInput
+                  id="firstName"
+                  label="First Name"
+                  name="firstName"
+                  type="text"
+                />
+              </div>
+              <div>
+                <TextInput
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  type="text"
+                />
+              </div>
             </MultipleInputStyles>
           </FormStyles>
 

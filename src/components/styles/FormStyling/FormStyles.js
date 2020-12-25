@@ -10,14 +10,14 @@ const FormStyles = styled.div`
   padding: 14px;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
   input {
-    width: 100%;
+    width: 90%;
     margin-bottom: 10px;
+    margin: 10px auto;
     padding: 8px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
@@ -25,6 +25,7 @@ const FormStyles = styled.div`
 
   label {
     text-align: left;
+    padding-left: 20px;
     font-size: 12px;
   }
 `;
@@ -54,16 +55,18 @@ const FormStyles2 = styled.div`
 `;
 
 const MultipleInputStyles = styled.div`
-  width: 40%;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 
   input {
-    padding: 10px;
+    width: 80%;
+    margin-left: 20px;
   }
 
   label {
-    font-size: 12px;
   }
 `;
 
