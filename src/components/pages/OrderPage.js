@@ -7,7 +7,7 @@ import Order from "../OrderSummary/Order";
 const OrderPage = () => {
   return (
     <MainContainerStyles>
-      <div>marios</div>
+      <div></div>
       <MainForm />
       <Order />
     </MainContainerStyles>
