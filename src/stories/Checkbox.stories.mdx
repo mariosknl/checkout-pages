@@ -1,5 +1,5 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { TextInput } from "../components/Forms/common/Checkbox.js";
+import { Checkbox } from "../components/Forms/common/Checkbox.js";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
@@ -11,8 +11,8 @@ Checkbox field controlled by Formik.
 
 ## Usage
 
-TextInput is a custom component using `useField()` which is a React Hook provided by `Formik`.
-`useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. We are using `Yup` package for validating our input data and display the error just beneath the input only if it exists and when focus is lost.
+Checbox is a custom component using `useField()` which is a React Hook provided by `Formik`.
+`useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. Whever you call this component we have to add a type prop if you want to have something different that `checkbox` which is the default value.
 
 ## Checkbox
 
@@ -20,18 +20,15 @@ Checkbox components are used to retrieve data from users on a page and inside fo
 
 <Preview withToolbar>
   <Story name="Checkbox">
-    <Formik
-      initialValues={{ country: "" }}
-      validationSchema={Yup.object({
-        country: Yup.string().required("Required"),
-      })}
-    >
-      <Checkbox
-        id="firstName"
-        name="firstName"
-        type="checkbox"
-        label="Country"
-      />
+    <Formik initialValues={{ shippingAddress: "" }}>
+      <>
+        <Checkbox id="shippingAddress" name="picked" type="checkbox" check>
+          Use your Shipping Address
+        </Checkbox>
+        <Checkbox id="shippingAddress" name="picked2" type="checkbox">
+          Use a different Shipping Address
+        </Checkbox>
+      </>
     </Formik>
   </Story>
 </Preview>
