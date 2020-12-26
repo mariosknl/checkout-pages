@@ -11,13 +11,20 @@ export const ContactInformationForm = ({
 }) => {
   return (
     <FormStyles>
-      <TextInput id={email} label="Email" name={email} type="email" />
+      <TextInput
+        id={email}
+        label="Email"
+        name={email}
+        type="email"
+        className="full-width"
+      />
       <TextInput
         id={phoneNumber}
         label="Phone Number"
         name={phoneNumber}
         type="text"
         placeholder="CCxxxxxxxxxx"
+        className="full-width"
       />
 
       <div>

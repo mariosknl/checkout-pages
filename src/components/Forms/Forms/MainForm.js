@@ -86,7 +86,13 @@ const MainForm = () => {
           <Form>
             {/* Contact Information */}
             <h2>Contact Information</h2>
-            <div style={{ border: "1px solid black", width: "90%" }}>
+            <div
+              style={{
+                border: "1px solid #E0E0E0",
+                width: "90%",
+                borderRadius: "4px",
+              }}
+            >
               <ContactInformationForm
                 email="email"
                 phoneNumber="phoneNumber"

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { black } from "../../utils/colors";
 
 const MainContainerStyles = styled.div`
-  width: 100%;
+  width: 90%;
   height: 100vh;
   margin: 0 auto;
   display: grid;

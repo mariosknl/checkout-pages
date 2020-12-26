@@ -5,84 +5,56 @@ import * as theme from "../../../utils";
 const { defaultTheme } = theme;
 
 const FormStyles = styled.div`
-  width: 90%;
-  height: 30vh;
-  padding: 14px;
+  width: 100%;
+  height: 35vh;
+  padding: 0.875rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  gap: 20px;
 
   input {
-    width: 90%;
-    margin-bottom: 10px;
-    margin: 10px auto;
-    padding: 8px;
+    width: 100%;
+    height: 60%;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
+    margin-top: 0.4rem;
   }
 
-  label {
-    text-align: left;
-    padding-left: 20px;
-    font-size: 12px;
+  .full-width {
+    width: 100%;
+    grid-column: 1 / 3;
   }
 `;
 
 const FormStyles2 = styled.div`
   width: 90%;
-  height: 42vh;
-  padding: 14px;
+  height: 43vh;
+  padding: 0.875rem;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 
   input {
-    width: 90%;
-    margin-bottom: 10px;
-    margin: 10px auto;
-    padding: 8px;
+    width: 100%;
+    height: 60%;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
-  }
-
-  #postalCode {
-    width: 70%;
+    padding-top: 14px;
   }
 
   select {
-    width: 89%;
-    margin-top: 0.6rem;
-    margin-right: 2rem;
-    padding: 5px;
+    width: 100%;
+    padding: 7px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
 
-  #countryLabel {
-    padding-left: 0;
-  }
-
-  #postalCode {
-    width: 70%;
-  }
-
-  label {
-    padding-left: 20px;
-    font-size: 12px;
-  }
-
-  #city {
-    width: 76%;
-    margin-right: 5rem;
-  }
-
-  #state {
-    width: 80%;
+  .full-width {
+    width: 100%;
+    grid-column: 1 / 3;
   }
 `;
 

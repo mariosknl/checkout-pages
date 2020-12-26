@@ -47,7 +47,13 @@ export const PaymentMethodsForm = ({
             />
           </div>
           <div>
-            <TextInput id={cvv} label="CVV" name={cvv} type="text" />
+            <TextInput
+              id={cvv}
+              label="CVV"
+              name={cvv}
+              type="text"
+              className="cvv"
+            />
           </div>
         </PaymentMethodStylesInputs>
       </PaymentMethodsStyles>

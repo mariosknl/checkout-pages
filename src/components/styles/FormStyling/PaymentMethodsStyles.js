@@ -15,27 +15,15 @@ const PaymentMethodsStyles = styled.div`
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
-
-  label {
-    font-size: 12px;
-  }
 `;
 
 const PaymentMethodStylesInputs = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 
-  input {
-    width: 80%;
-  }
-
-  label {
-    padding-left: 5px;
-  }
-
-  #cvv {
-    width: 80%;
+  .cvv {
+    width: 50%;
   }
 `;
 
@@ -60,6 +48,7 @@ const CardStyles = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-right: 2rem;
+  border-radius: 4px;
 `;
 
 export {

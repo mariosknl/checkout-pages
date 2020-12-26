@@ -19,40 +19,38 @@ export const ShippingAddressForm = ({
         label="Street Address"
         name={streetAddress}
         type="text"
+        className="full-width"
       />
       <TextInput
         id={otherInfo}
         label="Other Information (Optional)"
         name={otherInfo}
         type="text"
+        className="full-width"
       />
-      <MultipleInputStyles>
-        <div>
-          <TextInput
-            id={postalCode}
-            label="Postal Code"
-            name={postalCode}
-            type="text"
-          />
-        </div>
+      <div>
+        <TextInput
+          id={postalCode}
+          label="Postal Code"
+          name={postalCode}
+          type="text"
+        />
+      </div>
 
-        <SelectCountry id={country} label="Country" name="country">
-          <option value="">Select Country</option>
-          {countryNames.map((country) => (
-            <option key={country.name} id={country.name} value={country.name}>
-              {country.name}
-            </option>
-          ))}
-        </SelectCountry>
-      </MultipleInputStyles>
-      <MultipleInputStyles>
-        <div>
-          <TextInput id={city} name={city} label="City" type="text" />
-        </div>
-        <div>
-          <TextInput id={state} name={state} label="State/Region" type="text" />
-        </div>
-      </MultipleInputStyles>
+      <SelectCountry id={country} label="Country" name="country">
+        <option value="">Select Country</option>
+        {countryNames.map((country) => (
+          <option key={country.name} id={country.name} value={country.name}>
+            {country.name}
+          </option>
+        ))}
+      </SelectCountry>
+      <div>
+        <TextInput id={city} name={city} label="City" type="text" />
+      </div>
+      <div>
+        <TextInput id={state} name={state} label="State/Region" type="text" />
+      </div>
     </FormStyles2>
   );
 };
