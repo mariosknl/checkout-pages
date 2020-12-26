@@ -17,6 +17,7 @@ export const ContactInformationForm = ({
         label="Phone Number"
         name={phoneNumber}
         type="text"
+        placeholder="CCxxxxxxxxxx"
       />
 
       <div>
