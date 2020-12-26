@@ -6,32 +6,17 @@ import { Redirect } from "react-router-dom";
 import { getContactInfo } from "../../../reducers/contactSlice";
 import { getShippingInfo } from "../../../reducers/shippingSlice";
 import { getPaymentDetails } from "../../../reducers/paymentSlice";
-import { countryNames } from "../common/selectCountryFunc";
 
-import {
-  Checkbox,
-  initialValues,
-  TextInput,
-  SelectCountry,
-  validationSchemaForms,
-} from "../common";
+import { Checkbox, initialValues, validationSchemaForms } from "../common";
 
-import {
-  BannerStyles,
-  BillingOptionsStyles,
-  ButtonStyles,
-  CardStyles,
-  FooterStyles,
-  FormStyles,
-  FormStyles2,
-  MultipleInputStyles,
-  PaymentMethodStylesInputs,
-  PaymentMethodsStyles,
-} from "../../styles";
+import { BillingOptionsStyles, ButtonStyles, FooterStyles } from "../../styles";
 
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 
-import group from "../../../assets/group.png";
+import ContactInformationForm from "./ContactInformationForm";
+import ShippingAddressForm from "./ShippingAddressForm";
+import PaymentMethodsForm from "./PaymentMethodsForm";
+import ShippingOptionsForm from "./ShippingOptionsForm";
 
 const MainForm = () => {
   const [checked, setChecked] = useState(false);
@@ -95,156 +80,43 @@ const MainForm = () => {
         <Form>
           {/* Contact Information */}
           <h2>Contact Information</h2>
-          <FormStyles>
-            <TextInput id="email" label="Email" name="email" type="text" />
-            <TextInput
-              id="phoneNumber"
-              label="Phone Number"
-              name="phoneNumber"
-              type="text"
-            />
-            <MultipleInputStyles>
-              <div>
-                <TextInput
-                  id="firstName"
-                  label="First Name"
-                  name="firstName"
-                  type="text"
-                />
-              </div>
-              <div>
-                <TextInput
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  type="text"
-                />
-              </div>
-            </MultipleInputStyles>
-          </FormStyles>
+
+          <ContactInformationForm
+            email="email"
+            phoneNumber="phoneNumber"
+            firstName="firstName"
+            lastName="lastName"
+          />
 
           {/* Shipping Information */}
           <h2>Shipping Address</h2>
-          <FormStyles2>
-            <TextInput
-              id="streetAddress"
-              label="Street Address"
-              name="streetAddress"
-              type="text"
-            />
-            <TextInput
-              id="otherInfo"
-              label="Other Information (optional)"
-              name="otherInfo"
-              type="text"
-            />
-            <MultipleInputStyles>
-              <div>
-                <TextInput
-                  label="Postal Code"
-                  id="postalCode"
-                  name="postalCode"
-                  type="text"
-                />
-              </div>
-
-              <SelectCountry label="Country" id="country" name="country">
-                <option value="">Select Country</option>
-                {countryNames.map((country) => (
-                  <option
-                    key={country.name}
-                    id={country.name}
-                    value={country.name}
-                  >
-                    {country.name}
-                  </option>
-                ))}
-              </SelectCountry>
-            </MultipleInputStyles>
-            <MultipleInputStyles>
-              <div>
-                <TextInput label="City" id="city" name="city" type="text" />
-              </div>
-              <div>
-                <TextInput
-                  label="State/Region"
-                  id="state"
-                  name="state"
-                  type="text"
-                />
-              </div>
-            </MultipleInputStyles>
-          </FormStyles2>
+          <ShippingAddressForm
+            city="city"
+            country="country"
+            otherInfo="otherInfo"
+            postalCode="postalCode"
+            state="state"
+            streetAddress="streetAddress"
+          />
 
           {/* Shipping Options */}
           <h2>Billing Information</h2>
-          <BillingOptionsStyles>
-            <p>
-              Please provide us with your billing information, so we can send
-              you an invoice after order confirmation.
-            </p>
-            <Checkbox
-              id="shippingAddress"
-              name="picked"
-              type="radio"
-              value="shippingAddress"
-              checked={checked}
-              onClick={handleCheck}
-            >
-              Use my shipping address
-            </Checkbox>
-            <Checkbox
-              id="shippingDifAddress"
-              name="picked"
-              type="radio"
-              value="shippingDifAddress"
-              checked={checked}
-              onClick={handleCheck}
-            >
-              Use a different address
-            </Checkbox>
-          </BillingOptionsStyles>
+          <ShippingOptionsForm
+            checked={checked}
+            handleCheck={handleCheck}
+            shippingAddress="shippingAddress"
+            shippingDifAddress="shippingDifAddress"
+            type="radio"
+          />
 
           {/* Payment Methods */}
 
-          <>
-            <h2>Payment Methods</h2>
-            <BannerStyles>
-              <p>Pay with Credit Card</p>
-              <CardStyles>
-                <img src={group} alt="creditCards" />
-              </CardStyles>
-            </BannerStyles>
-            <PaymentMethodsStyles>
-              <TextInput
-                id="cardHolder"
-                label="Card Holder"
-                name="cardHolder"
-                type="string"
-              />
-              <TextInput
-                id="cardNumber"
-                name="cardNumber"
-                label="Card Number"
-                type="text"
-              />
-              <PaymentMethodStylesInputs>
-                <div>
-                  <TextInput
-                    id="expirationDate"
-                    name="expirationDate"
-                    label="Expiration Date"
-                    type="text"
-                    placeholder="MM/YY"
-                  />
-                </div>
-                <div>
-                  <TextInput id="cvv" name="cvv" label="CVV" type="text" />
-                </div>
-              </PaymentMethodStylesInputs>
-            </PaymentMethodsStyles>
-            <BannerStyles />
-          </>
+          <PaymentMethodsForm
+            cardHolder="cardHolder"
+            cardNumber="cardNumber"
+            cvv="cvv"
+            expirationDate="expirationDate"
+          />
 
           {/* Terms & Buttons */}
 
