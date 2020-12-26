@@ -30,7 +30,7 @@ const ShippingOptionsForm = ({
       <Checkbox
         checked={checked}
         id={shippingDifAddress}
-        name={shippingDifAddress}
+        name={shippingAddress}
         type={type}
         value={shippingDifAddress}
         onClick={handleCheck}
