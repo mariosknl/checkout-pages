@@ -17,6 +17,7 @@ import ContactInformationForm from "./ContactInformationForm";
 import ShippingAddressForm from "./ShippingAddressForm";
 import PaymentMethodsForm from "./PaymentMethodsForm";
 import ShippingOptionsForm from "./ShippingOptionsForm";
+import Terms from "./Terms";
 
 const MainForm = () => {
   const [checked, setChecked] = useState(false);
@@ -120,24 +121,7 @@ const MainForm = () => {
 
           {/* Terms & Buttons */}
 
-          <FooterStyles>
-            <Checkbox name="terms" type="checkbox">
-              I agree to the <span>Terms and Conditions</span> and the{" "}
-              <span>Privacy Policy</span>
-            </Checkbox>
-            {/* {error && <div className="error">There are errors in the page</div>} */}
-            <ButtonStyles>
-              <SecondaryButton modifiers="small">Back</SecondaryButton>
-              <PrimaryButton modifiers="large" type="submit">
-                Buy Now
-              </PrimaryButton>
-            </ButtonStyles>
-            <p>
-              By clicking the button 'Buy Now', I agree to the{" "}
-              <span>Terms and Conditions</span> and the{" "}
-              <span>Privacy Policy</span>
-            </p>
-          </FooterStyles>
+          <Terms terms="terms" />
         </Form>
       </Formik>
     </>
