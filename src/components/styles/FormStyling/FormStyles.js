@@ -8,7 +8,6 @@ const FormStyles = styled.div`
   width: 90%;
   height: 30vh;
   padding: 14px;
-  border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
   display: flex;
   flex-direction: column;

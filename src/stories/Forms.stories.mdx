@@ -1,0 +1,155 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+import { ContactInformationForm } from "../components/Forms/Forms/ContactInformationForm.js";
+import { ShippingAddressForm } from "../components/Forms/Forms/ShippingAddressForm.js";
+import { PrimaryButton } from "../components/ui/Buttons.js";
+import FormStylesStories from "./styles/FormStylesStories2.js";
+
+<Meta title="Forms" />
+
+# Contact Information Form
+
+## Usage
+
+`Contact Information Form` is a custom component for collecting user input data. It needs <b>firstName</b>, <b>lastName</b>, <b>email</b> and <b>phoneNumber</b> to pass as props when we use it. It contains another custom component [TextInput](/?path=/docs/textinput--text-input) which controls each input.
+
+<Preview withToolbar>
+  <Story name="Contact Information Form">
+    <FormStylesStories>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+        }}
+        validationSchema={Yup.object({
+          firstName: Yup.string().required("This field is mandatory"),
+          lastName: Yup.string().required("This field is mandatory"),
+          email: Yup.string()
+            .email("it needs to be a valid email")
+            .matches(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            )
+            .required("This field is mandatory"),
+          phoneNumber: Yup.string()
+            .matches(
+              /^[0-9]{12}$/,
+              "Phone number must be 12 digits. Add your country code."
+            )
+            .required("This field is mandatory"),
+        })}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <ContactInformationForm
+              firstName="firstName"
+              lastName="lastName"
+              email="email"
+              phoneNumber="phoneNumber"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </form>
+        )}
+      </Formik>
+    </FormStylesStories>
+  </Story>
+</Preview>
+
+# Shipping Address Form
+
+## Usage
+
+`Shipping Address Form` is a custom component for collecting user input data. It needs <b>streetAddress</b>, <b>otherInfo</b>, <b>postalCode</b>, <b>country</b>, <b>city</b> and <b>state</b> to pass as props when we use it. It contains two other custom component [TextInput](/?path=/docs/textinput--text-input) and [SelectCountry](/?path=/docs/selectcountry--select-country) and which control the inputs.
+
+<Preview withToolbar>
+  <Story name=" Shipping Address Form">
+    <FormStylesStories>
+      <Formik
+        initialValues={{
+          streetAddress: "",
+          otherInfo: "",
+          postalCode: "",
+          country: "",
+          city: "",
+          state: "",
+        }}
+        validationSchema={Yup.object({
+          streetAddress: Yup.string().required("This field is mandatory"),
+          otherInfo: Yup.string(),
+          postalCode: Yup.string().required("This field is mandatory"),
+          country: Yup.string().required("This field is mandatory"),
+          city: Yup.string().required("This field is mandatory"),
+          state: Yup.string().required("This field is mandatory"),
+        })}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <ShippingAddressForm
+              streetAddress="streetAddress"
+              otherInfo="otherInfo"
+              postalCode="postalCode"
+              city="city"
+              state="state"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </form>
+        )}
+      </Formik>
+    </FormStylesStories>
+  </Story>
+</Preview>
+
+# Payment Methods Form
+
+## Usage
+
+`Payment Methods Form` is a custom component for collecting user input data. It needs <b>cardHolder</b>, <b>cardNumber</b>, <b>expirationDate</b>, and <b>cvv</b> to pass as props when we use it. It contains two other custom component [TextInput](/?path=/docs/textinput--text-input) which controls the inputs.
+
+<Preview withToolbar>
+  <Story name="Payment Methods Form">
+    <FormStylesStories>
+      <Formik
+        initialValues={{
+          cardHolder: "",
+          cardNumber: "",
+          expirationDate: "",
+          cvv: "",
+        }}
+        validationSchema={Yup.object({
+          cardHolder: Yup.string().required("Name in the card please"),
+          cardNumber: Yup.string()
+            .required("Credit card number is required")
+            .matches(/^[0-9]{16}$/, "Credit card number must be 16 digits"),
+          expirationDate: Yup.date()
+            .required("Credit card expiration date is required")
+            .min(new Date(), "Credit card is expired"),
+          cvv: Yup.string().min(3).max(3).required("CVC is required"),
+        })}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <ShippingAddressForm
+              streetAddress="streetAddress"
+              otherInfo="otherInfo"
+              postalCode="postalCode"
+              city="city"
+              state="state"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </form>
+        )}
+      </Formik>
+    </FormStylesStories>
+  </Story>
+</Preview>

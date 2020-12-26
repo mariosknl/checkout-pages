@@ -3,7 +3,7 @@ import React from "react";
 import { Checkbox } from "../common";
 import { BillingOptionsStyles } from "../../styles";
 
-const ShippingOptionsForm = ({
+export const ShippingOptionsForm = ({
   checked,
   handleCheck,
   shippingAddress,
@@ -40,5 +40,3 @@ const ShippingOptionsForm = ({
     </BillingOptionsStyles>
   );
 };
-
-export default ShippingOptionsForm;

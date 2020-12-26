@@ -9,7 +9,7 @@ import {
 } from "../../styles";
 import group from "../../../assets/group.png";
 
-const PaymentMethodsForm = ({
+export const PaymentMethodsForm = ({
   cardHolder,
   cardNumber,
   cvv,
@@ -33,7 +33,7 @@ const PaymentMethodsForm = ({
         <TextInput
           id={cardNumber}
           label="Card Number"
-          name={cardHolder}
+          name={cardNumber}
           type="text"
         />
         <PaymentMethodStylesInputs>
@@ -55,5 +55,3 @@ const PaymentMethodsForm = ({
     </>
   );
 };
-
-export default PaymentMethodsForm;

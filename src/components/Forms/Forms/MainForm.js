@@ -7,16 +7,14 @@ import { getContactInfo } from "../../../reducers/contactSlice";
 import { getShippingInfo } from "../../../reducers/shippingSlice";
 import { getPaymentDetails } from "../../../reducers/paymentSlice";
 
-import { Checkbox, initialValues, validationSchemaForms } from "../common";
+import { initialValues, validationSchemaForms } from "../common";
 
-import { BillingOptionsStyles, ButtonStyles, FooterStyles } from "../../styles";
-
-import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
-
-import ContactInformationForm from "./ContactInformationForm";
-import ShippingAddressForm from "./ShippingAddressForm";
-import PaymentMethodsForm from "./PaymentMethodsForm";
-import ShippingOptionsForm from "./ShippingOptionsForm";
+import {
+  ContactInformationForm,
+  PaymentMethodsForm,
+  ShippingAddressForm,
+  ShippingOptionsForm,
+} from "./index";
 import Terms from "./Terms";
 
 const MainForm = () => {
@@ -81,13 +79,14 @@ const MainForm = () => {
         <Form>
           {/* Contact Information */}
           <h2>Contact Information</h2>
-
-          <ContactInformationForm
-            email="email"
-            phoneNumber="phoneNumber"
-            firstName="firstName"
-            lastName="lastName"
-          />
+          <div style={{ border: "1px solid black", width: "90%" }}>
+            <ContactInformationForm
+              email="email"
+              phoneNumber="phoneNumber"
+              firstName="firstName"
+              lastName="lastName"
+            />
+          </div>
 
           {/* Shipping Information */}
           <h2>Shipping Address</h2>

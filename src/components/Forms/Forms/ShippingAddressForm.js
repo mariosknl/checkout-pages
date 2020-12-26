@@ -4,7 +4,7 @@ import { countryNames } from "../common/selectCountryFunc";
 import { TextInput, SelectCountry } from "../common";
 import { FormStyles2, MultipleInputStyles } from "../../styles";
 
-const ShippingAddressForm = ({
+export const ShippingAddressForm = ({
   city,
   country,
   otherInfo,
@@ -56,5 +56,3 @@ const ShippingAddressForm = ({
     </FormStyles2>
   );
 };
-
-export default ShippingAddressForm;
