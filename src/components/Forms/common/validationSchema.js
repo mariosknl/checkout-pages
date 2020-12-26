@@ -17,7 +17,7 @@ export const validationSchemaForms = object({
   lastName: string().required("This field is mandatory"),
   streetAddress: string().required("This field is mandatory"),
   otherInfo: string(),
-  postalCode: string().required("This field is mandatory"),
+  postalCode: string().min(5).max(5).required("This field is mandatory"),
   country: string().required("This field is mandatory"),
   city: string().required("This field is mandatory"),
   state: string().required("This field is mandatory"),

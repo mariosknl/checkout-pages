@@ -69,7 +69,7 @@ import FormStylesStories from "./styles/FormStylesStories2.js";
 
 ## Usage
 
-`Shipping Address Form` is a custom component for collecting user input data. It needs <b>streetAddress</b>, <b>otherInfo</b>, <b>postalCode</b>, <b>country</b>, <b>city</b> and <b>state</b> to pass as <b>props</b> whenever we use it. It contains two other custom component [TextInput](/?path=/docs/textinput--text-input) and [SelectCountry](/?path=/docs/selectcountry--select-country) and which control the inputs.
+`Shipping Address Form` is a custom component for collecting user input data. It needs <b>streetAddress</b>, <b>otherInfo</b>, <b>postalCode</b>, <b>country</b>, <b>city</b> and <b>state</b> to pass as <b>props</b> whenever we use it. It contains two other custom component [TextInput](/?path=/docs/textinput--text-input) and [SelectCountry](/?path=/docs/selectcountry--select-country) and which control the inputs. There are validation in every input except Other Information input which is optional. <b>Postal code</b> input accepts only 5 characters otherwise it will error out.
 
 <Preview withToolbar>
   <Story name=" Shipping Address Form">
