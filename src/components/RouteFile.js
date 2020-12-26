@@ -9,7 +9,6 @@ import ThankYou from "./pages/ThankYou";
 const RouteFile = () => {
   return (
     <Router>
-      <Header />
       <Switch>
         <Route path="/thanks" component={ThankYou} />
         <Route exact path="/" component={OrderPage} />

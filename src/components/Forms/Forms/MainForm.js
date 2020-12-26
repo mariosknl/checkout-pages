@@ -3,9 +3,13 @@ import { Formik, Form } from "formik";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import { getContactInfo } from "../../../reducers/contactSlice";
-import { getShippingInfo } from "../../../reducers/shippingSlice";
-import { getPaymentDetails } from "../../../reducers/paymentSlice";
+import Header from "../../Header/Header";
+
+import {
+  getContactInfo,
+  getPaymentDetails,
+  getShippingInfo,
+} from "../../../reducers";
 
 import { initialValues, validationSchemaForms } from "../common";
 
@@ -16,6 +20,7 @@ import {
   ShippingOptionsForm,
 } from "./index";
 import Terms from "./Terms";
+import { WrapperStyling } from "../../styles";
 
 const MainForm = () => {
   const [checked, setChecked] = useState(false);
@@ -29,100 +34,103 @@ const MainForm = () => {
   return (
     <>
       {redirect ? <Redirect to="/thanks" /> : ""}
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchemaForms}
-        onSubmit={(values) => {
-          const {
-            email,
-            phoneNumber,
-            firstName,
-            lastName,
-            streetAddress,
-            otherInfo,
-            postalCode,
-            city,
-            state,
-            cardHolder,
-            cardNumber,
-            expirationDate,
-            cvv,
-          } = values;
+      <WrapperStyling>
+        <Header />
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchemaForms}
+          onSubmit={(values) => {
+            const {
+              email,
+              phoneNumber,
+              firstName,
+              lastName,
+              streetAddress,
+              otherInfo,
+              postalCode,
+              city,
+              state,
+              cardHolder,
+              cardNumber,
+              expirationDate,
+              cvv,
+            } = values;
 
-          const contactInfo = {
-            email,
-            phoneNumber,
-            firstName,
-            lastName,
-          };
+            const contactInfo = {
+              email,
+              phoneNumber,
+              firstName,
+              lastName,
+            };
 
-          const shippingInfo = {
-            streetAddress,
-            otherInfo,
-            postalCode,
-            city,
-            state,
-          };
+            const shippingInfo = {
+              streetAddress,
+              otherInfo,
+              postalCode,
+              city,
+              state,
+            };
 
-          const paymentInfo = {
-            cardHolder,
-            cardNumber,
-            expirationDate,
-            cvv,
-          };
-          dispatch(getContactInfo(contactInfo));
-          dispatch(getShippingInfo(shippingInfo));
-          dispatch(getPaymentDetails(paymentInfo));
-          setRedirect(true);
-        }}
-      >
-        <Form>
-          {/* Contact Information */}
-          <h2>Contact Information</h2>
-          <div style={{ border: "1px solid black", width: "90%" }}>
-            <ContactInformationForm
-              email="email"
-              phoneNumber="phoneNumber"
-              firstName="firstName"
-              lastName="lastName"
+            const paymentInfo = {
+              cardHolder,
+              cardNumber,
+              expirationDate,
+              cvv,
+            };
+            dispatch(getContactInfo(contactInfo));
+            dispatch(getShippingInfo(shippingInfo));
+            dispatch(getPaymentDetails(paymentInfo));
+            setRedirect(true);
+          }}
+        >
+          <Form>
+            {/* Contact Information */}
+            <h2>Contact Information</h2>
+            <div style={{ border: "1px solid black", width: "90%" }}>
+              <ContactInformationForm
+                email="email"
+                phoneNumber="phoneNumber"
+                firstName="firstName"
+                lastName="lastName"
+              />
+            </div>
+
+            {/* Shipping Information */}
+            <h2>Shipping Address</h2>
+            <ShippingAddressForm
+              city="city"
+              country="country"
+              otherInfo="otherInfo"
+              postalCode="postalCode"
+              state="state"
+              streetAddress="streetAddress"
             />
-          </div>
 
-          {/* Shipping Information */}
-          <h2>Shipping Address</h2>
-          <ShippingAddressForm
-            city="city"
-            country="country"
-            otherInfo="otherInfo"
-            postalCode="postalCode"
-            state="state"
-            streetAddress="streetAddress"
-          />
+            {/* Shipping Options */}
+            <h2>Billing Information</h2>
+            <ShippingOptionsForm
+              checked={checked}
+              handleCheck={handleCheck}
+              shippingAddress="shippingAddress"
+              shippingDifAddress="shippingDifAddress"
+              type="radio"
+            />
 
-          {/* Shipping Options */}
-          <h2>Billing Information</h2>
-          <ShippingOptionsForm
-            checked={checked}
-            handleCheck={handleCheck}
-            shippingAddress="shippingAddress"
-            shippingDifAddress="shippingDifAddress"
-            type="radio"
-          />
+            {/* Payment Methods */}
 
-          {/* Payment Methods */}
+            <PaymentMethodsForm
+              cardHolder="cardHolder"
+              cardNumber="cardNumber"
+              cvv="cvv"
+              expirationDate="expirationDate"
+            />
 
-          <PaymentMethodsForm
-            cardHolder="cardHolder"
-            cardNumber="cardNumber"
-            cvv="cvv"
-            expirationDate="expirationDate"
-          />
+            {/* Terms & Buttons */}
 
-          {/* Terms & Buttons */}
-
-          <Terms terms="terms" />
-        </Form>
-      </Formik>
+            <Terms terms="terms" />
+          </Form>
+        </Formik>
+      </WrapperStyling>
     </>
   );
 };

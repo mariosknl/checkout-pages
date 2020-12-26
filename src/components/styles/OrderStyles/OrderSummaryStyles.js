@@ -3,23 +3,20 @@ import styled from "styled-components";
 import { blue } from "../../../utils";
 const CartContainerStyles = styled.div`
   width: 90%;
-  height: 40%;
   background-color: white;
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  grid-column: 2/3;
   border-radius: 4px;
+  margin: 0 auto;
 `;
 
 const CartInnerContainerStyles = styled.div`
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin: 0 auto;
 
   img {
     width: 40%;
@@ -28,7 +25,7 @@ const CartInnerContainerStyles = styled.div`
 
   .lists {
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px dotted #ccc;
   }
 `;
 

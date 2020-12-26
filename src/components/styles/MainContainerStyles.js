@@ -7,13 +7,14 @@ const MainContainerStyles = styled.div`
   height: 100vh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: 60% 1fr;
   position: relative;
   overflow-x: hidden;
 `;
 
 const OrderContainerStyles = styled.div`
   width: 100%;
+  justify-self: end;
   background-color: ${black[100]};
 `;
 

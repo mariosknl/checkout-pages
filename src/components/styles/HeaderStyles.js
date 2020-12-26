@@ -14,7 +14,6 @@ const Steps = styled.span`
 
 const HeaderContainer = styled.header`
   width: 100%;
-  margin: 0 auto;
 `;
 
 export { Steps, HeaderContainer };
