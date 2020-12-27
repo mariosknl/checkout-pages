@@ -29,7 +29,7 @@ export const validationSchemaForms = object({
     .required("Credit card expiration date is required")
     .min(new Date(), "Credit card is expired"),
   cvv: string().min(3).max(3).required("CVC is required"),
-  terms: boolean().required(
-    "You have to accept the terms before submitting your order."
-  ),
+  terms: boolean()
+    .required("Required")
+    .oneOf([true], "You must accept the terms and conditions."),
 });

@@ -30,6 +30,5 @@ export const GlobalStyle = createGlobalStyle`
 
   .error {
     color: ${red[400]};
-    padding-left: 20px;
   }
 `;
