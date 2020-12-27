@@ -37,16 +37,16 @@ export const ShippingAddressForm = ({
         />
       </div>
 
-      <SelectCountry id={country} label="Country" name="country">
-        <option value="" style={{ appearance: "none" }}>
-          Select Country
-        </option>
-        {countryNames.map((country) => (
-          <option key={country.name} id={country.name} value={country.name}>
-            {country.name}
-          </option>
-        ))}
-      </SelectCountry>
+      <div className="dropdown">
+        <SelectCountry id={country} label="Country" name="country">
+          <option value="">Select Country</option>
+          {countryNames.map((country) => (
+            <option key={country.name} id={country.name} value={country.name}>
+              {country.name}
+            </option>
+          ))}
+        </SelectCountry>
+      </div>
       <div>
         <TextInput id={city} name={city} label="City" type="text" />
       </div>

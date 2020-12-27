@@ -25,10 +25,16 @@ import { WrapperStyling } from "../../styles";
 const MainForm = () => {
   const [checked, setChecked] = useState(false);
   const [redirect, setRedirect] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const dispatch = useDispatch();
 
   const handleCheck = (e) => {
     setChecked(true);
+    if (e.target.value === "shippingDifAddress") {
+      setShowForm(true);
+    } else {
+      setShowForm(false);
+    }
   };
 
   return (
@@ -104,6 +110,17 @@ const MainForm = () => {
               state="state"
               streetAddress="streetAddress"
             />
+
+            {showForm && (
+              <ShippingAddressForm
+                city="city"
+                country="country"
+                otherInfo="otherInfo"
+                postalCode="postalCode"
+                state="state"
+                streetAddress="streetAddress"
+              />
+            )}
 
             {/* Shipping Options */}
             <h2>Billing Information</h2>

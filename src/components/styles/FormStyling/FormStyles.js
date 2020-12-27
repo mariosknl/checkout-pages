@@ -61,6 +61,11 @@ const FormStyles2 = styled.div`
     padding: 7px;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
+    -moz-appearance: none;
+    --webkit-appearance: ;
+  }
+
+  .dropdown {
   }
 
   .full-width {
