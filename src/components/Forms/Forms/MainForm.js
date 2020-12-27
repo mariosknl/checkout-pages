@@ -112,14 +112,17 @@ const MainForm = () => {
             />
 
             {showForm && (
-              <ShippingAddressForm
-                city="city"
-                country="country"
-                otherInfo="otherInfo"
-                postalCode="postalCode"
-                state="state"
-                streetAddress="streetAddress"
-              />
+              <>
+                <h2>Billing Address</h2>
+                <ShippingAddressForm
+                  city="city"
+                  country="country"
+                  otherInfo="otherInfo"
+                  postalCode="postalCode"
+                  state="state"
+                  streetAddress="streetAddress"
+                />
+              </>
             )}
 
             {/* Shipping Options */}

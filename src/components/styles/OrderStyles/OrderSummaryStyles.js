@@ -34,7 +34,7 @@ const CartInnerContainerStyles = styled.div`
 
   .lists {
     width: 100%;
-    border: 1px dotted #ccc;
+    border: 1px dotted ${black[300]};
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
@@ -67,7 +67,7 @@ const OrderButtonStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid ${black[300]};
     border-radius: 4px;
 
     p {

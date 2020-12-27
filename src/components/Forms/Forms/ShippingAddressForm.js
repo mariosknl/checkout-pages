@@ -2,7 +2,7 @@ import React from "react";
 
 import { countryNames } from "../common/selectCountryFunc";
 import { TextInput, SelectCountry } from "../common";
-import { FormStyles2, MultipleInputStyles } from "../../styles";
+import { FormStyles2 } from "../../styles";
 
 export const ShippingAddressForm = ({
   city,
