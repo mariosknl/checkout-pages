@@ -12,7 +12,6 @@ const paymentSlice = createSlice({
   },
   reducers: {
     getPaymentDetails: (state, action) => {
-      console.log(action.payload);
       state.paymentDetails = action.payload;
     },
   },

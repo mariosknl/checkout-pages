@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -14,7 +15,12 @@ class ErrorBoundary extends Component {
   }
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return (
+        <>
+          <h1>Something went wrong.</h1>
+          <Link to="/">Back to Homepage</Link>
+        </>
+      );
     }
     return this.props.children;
   }

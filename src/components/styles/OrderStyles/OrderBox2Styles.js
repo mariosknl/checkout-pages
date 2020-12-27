@@ -21,11 +21,11 @@ const OrderBox2Styles = styled.div`
   }
 
   .fbrands {
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 
   .brands {
-    margin-left: 3.8rem;
+    margin-left: 1.8rem;
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {

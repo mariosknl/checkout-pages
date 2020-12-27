@@ -26,7 +26,7 @@ export const validationSchemaForms = object({
     .required("Credit card number is required")
     .matches(/^[0-9]{16}$/, "Credit card number must be 16 digits"),
   expirationDate: date()
-    .required("Credit card expiration date is required")
+    .required("Credit card required")
     .min(new Date(), "Credit card is expired"),
   cvv: string().min(3).max(3).required("CVC is required"),
   terms: boolean()
