@@ -31,4 +31,8 @@ export const GlobalStyle = createGlobalStyle`
   .error {
     color: ${red[400]};
   }
+
+  .inputError {
+    border:1px solid red !important;
+  }
 `;
