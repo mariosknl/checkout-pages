@@ -26,6 +26,16 @@ const FormStyles = styled.div`
     width: 100%;
     grid-column: 1 / 3;
   }
+
+  @media screen and (min-width: 375px) and (max-width: 750px) {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
+  }
 `;
 
 const FormStyles2 = styled.div`
@@ -58,22 +68,15 @@ const FormStyles2 = styled.div`
     grid-column: 1 / 3;
   }
 
-  @media screen and (min-width: 375px) {
-    width: 100%;
+  @media screen and (min-width: 375px) and (max-width: 750px) {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
   }
 `;
 
-const MultipleInputStyles = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  input {
-    width: 80%;
-    margin-left: 20px;
-  }
-`;
-
-export { FormStyles, FormStyles2, MultipleInputStyles };
+export { FormStyles, FormStyles2 };

@@ -38,7 +38,9 @@ export const ShippingAddressForm = ({
       </div>
 
       <SelectCountry id={country} label="Country" name="country">
-        <option value="">Select Country</option>
+        <option value="" style={{ appearance: "none" }}>
+          Select Country
+        </option>
         {countryNames.map((country) => (
           <option key={country.name} id={country.name} value={country.name}>
             {country.name}

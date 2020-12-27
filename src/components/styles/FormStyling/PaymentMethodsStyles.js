@@ -3,7 +3,7 @@ import styled from "styled-components";
 import * as theme from "../../../utils";
 
 const PaymentMethodsStyles = styled.div`
-  width: 70%;
+  width: 90%;
   margin: 1rem 3rem;
 
   input {
@@ -16,7 +16,7 @@ const PaymentMethodsStyles = styled.div`
     border-radius: 4px;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
     margin: 1rem 1.5rem;
 
@@ -39,7 +39,7 @@ const PaymentMethodStylesInputs = styled.div`
 `;
 
 const BannerStyles = styled.div`
-  width: 90%;
+  width: 100%;
   height: 48px;
   background-color: ${theme.black[600]};
   display: flex;
@@ -52,7 +52,7 @@ const BannerStyles = styled.div`
     margin-left: 2rem;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
   }
 `;

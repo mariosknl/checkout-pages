@@ -16,6 +16,10 @@ const OrderBox2Styles = styled.div`
     font-size: 18px;
   }
 
+  img {
+    width: 90%;
+  }
+
   .fbrands {
     margin-left: 2.5rem;
   }
@@ -24,7 +28,7 @@ const OrderBox2Styles = styled.div`
     margin-left: 3.8rem;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     padding: 0;
     padding-top: 1rem;
 

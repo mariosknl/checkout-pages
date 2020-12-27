@@ -35,7 +35,6 @@ const MainForm = () => {
     <>
       {redirect ? <Redirect to="/thanks" /> : ""}
       <WrapperStyling>
-        <Header />
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchemaForms}

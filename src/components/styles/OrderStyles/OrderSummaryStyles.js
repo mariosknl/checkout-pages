@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { black, blue } from "../../../utils";
+
 const CartContainerStyles = styled.div`
   width: 90%;
   background-color: white;
@@ -9,7 +10,7 @@ const CartContainerStyles = styled.div`
   margin: 0 auto;
   grid-area: order;
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
   }
 `;
@@ -25,7 +26,6 @@ const CartInnerContainerStyles = styled.div`
   margin-bottom: 1rem;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid ${black[300]};
 
   img {
     width: 40%;
@@ -37,7 +37,7 @@ const CartInnerContainerStyles = styled.div`
     border: 1px dotted #ccc;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
     margin: 0;
 
@@ -86,7 +86,7 @@ const OrderButtonStyles = styled.div`
     }
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     padding-inline-end: 10px;
   }
 `;

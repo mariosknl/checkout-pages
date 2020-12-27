@@ -9,7 +9,7 @@ export const WrapperStyling = styled.div`
   @media screen and (max-width: 1080px) {
     width: 90%;
   }
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
     margin: 0;
   }

@@ -7,7 +7,7 @@ const OrderBox1Styles = styled.div`
   margin: 1.8rem auto;
   background-color: white;
   border-radius: 4px;
-  height: 8%;
+  height: 10%;
   padding-top: 0.1rem;
 
   ul {
@@ -34,7 +34,7 @@ const OrderBox1Styles = styled.div`
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
     margin: 0;
     padding: 0;
