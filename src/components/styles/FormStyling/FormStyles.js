@@ -10,6 +10,7 @@ const FormStyles = styled.div`
   padding: 0.875rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
   gap: 20px;
 
@@ -55,6 +56,10 @@ const FormStyles2 = styled.div`
   .full-width {
     width: 100%;
     grid-column: 1 / 3;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
   }
 `;
 

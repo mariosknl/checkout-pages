@@ -19,6 +19,10 @@ const BillingOptionsStyles = styled.div`
   input {
     margin: 0.8rem 3rem;
   }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+  }
 `;
 
 const BillingInformationStyles = styled.div`

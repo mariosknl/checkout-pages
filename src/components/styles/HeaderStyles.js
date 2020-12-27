@@ -14,6 +14,10 @@ const Steps = styled.span`
 
 const HeaderContainer = styled.header`
   width: 100%;
+  grid-area: header;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 export { Steps, HeaderContainer };

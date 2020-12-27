@@ -8,11 +8,12 @@ const FooterStyles = styled.div`
 
   input {
     margin-top: 1rem;
+    margin-right: 1rem;
   }
 
   label {
     font-size: ${typeScale.input};
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 
   p {
@@ -24,6 +25,16 @@ const FooterStyles = styled.div`
     font-size: ${typeScale.small};
     text-decoration: underline;
     color: ${blue[400]};
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+    color: ${black[200]};
+
+    p {
+      font-size: 12px;
+      margin: 1.5rem auto;
+    }
   }
 `;
 

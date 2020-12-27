@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-import { blue } from "../../../utils";
+import { black, blue } from "../../../utils";
 const CartContainerStyles = styled.div`
   width: 90%;
   background-color: white;
   grid-column: 2/3;
   border-radius: 4px;
   margin: 0 auto;
+  grid-area: order;
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+  }
 `;
 
 const CartInnerContainerStyles = styled.div`
@@ -17,6 +22,10 @@ const CartInnerContainerStyles = styled.div`
   align-items: center;
   overflow: hidden;
   margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid ${black[300]};
 
   img {
     width: 40%;
@@ -26,6 +35,20 @@ const CartInnerContainerStyles = styled.div`
   .lists {
     width: 100%;
     border: 1px dotted #ccc;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+    margin: 0;
+
+    img {
+      width: 30%;
+      margin-bottom: 0;
+    }
+
+    lists {
+      width: 70%;
+    }
   }
 `;
 
@@ -62,17 +85,22 @@ const OrderButtonStyles = styled.div`
       padding: 10px;
     }
   }
+
+  @media screen and (min-width: 375px) {
+    padding-inline-end: 10px;
+  }
 `;
 
 const ListStyles = styled.ul`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 50px;
-  padding-inline-start: 0;
+  padding-inline-start: 10px;
   gap: 20px;
 
-  .firstList {
-    border-bottom: 1px solid #ccc;
+  @media screen and (min-width: 375px) {
+    padding-inline-start: 10px;
+    gap: 10px;
   }
 `;
 

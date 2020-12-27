@@ -15,6 +15,17 @@ const PaymentMethodsStyles = styled.div`
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
   }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+    margin: 1rem 1.5rem;
+
+    input {
+      width: 85%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 `;
 
 const PaymentMethodStylesInputs = styled.div`
@@ -39,6 +50,10 @@ const BannerStyles = styled.div`
     font-size: ${theme.typeScale.small};
     font-weight: ${theme.fontWeight.bold};
     margin-left: 2rem;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
   }
 `;
 

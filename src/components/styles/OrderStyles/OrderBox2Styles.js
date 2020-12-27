@@ -4,10 +4,10 @@ import { black, typeScale } from "../../../utils";
 
 const OrderBox2Styles = styled.div`
   width: 90%;
-  margin: 4rem auto;
+  margin: 0 auto;
   border-radius: 4px;
   height: 14%;
-  padding-top: 0.1rem;
+  padding: 2rem;
 
   p {
     color: ${black[700]};
@@ -22,6 +22,30 @@ const OrderBox2Styles = styled.div`
 
   .brands {
     margin-left: 3.8rem;
+  }
+
+  @media screen and (min-width: 375px) {
+    padding: 0;
+    padding-top: 1rem;
+
+    p {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .fbrands {
+      width: 100%;
+      margin: 0;
+    }
+
+    .brands {
+      width: 100%;
+      margin: 0;
+    }
   }
 `;
 

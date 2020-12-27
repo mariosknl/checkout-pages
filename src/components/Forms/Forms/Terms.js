@@ -18,8 +18,8 @@ const Terms = ({ terms }) => {
         </PrimaryButton>
       </ButtonStyles>
       <p>
-        By clicking the button 'Buy Now', I agree to the
-        <span> Terms and Conditions</span> and the <span>Privacy Policy</span>
+        By clicking the button 'Buy Now', I agree to the Terms and Conditions
+        and the Privacy Policy
       </p>
     </FooterStyles>
   );
