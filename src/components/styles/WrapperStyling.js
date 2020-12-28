@@ -5,6 +5,7 @@ export const WrapperStyling = styled.div`
   display: grid;
   justify-self: end;
   grid-area: forms;
+  margin-top: 8rem;
 
   @media screen and (max-width: 1080px) {
     width: 90%;

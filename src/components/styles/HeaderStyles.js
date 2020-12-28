@@ -1,19 +1,34 @@
 import styled from "styled-components";
 
-const Steps = styled.span`
-  width: 36px;
-  height: 36px;
-  left: 423px;
-  top: 100px;
-
-  background: #009eff;
-  border: 2px solid #e0e0e0;
-  box-sizing: border-box;
-  border-radius: 2px;
-`;
-
 const HeaderContainer = styled.header`
+  grid-area: header;
+  grid-column: 2/3;
   width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: 20%;
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 750px) {
+    grid-column: 1/2;
+  }
 `;
 
-export { Steps, HeaderContainer };
+const StepsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  position: relative;
+
+  img {
+    width: 90%;
+  }
+`;
+
+export { HeaderContainer, StepsContainer };

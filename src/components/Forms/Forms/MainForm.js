@@ -23,14 +23,13 @@ import Terms from "./Terms";
 import { WrapperStyling } from "../../styles";
 
 const MainForm = () => {
-  const [checked, setChecked] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [gotErrors, setGotErrors] = useState({});
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cartInfo);
 
   const handleCheck = (e) => {
-    setChecked(true);
     e.target.value === "shippingDifAddress"
       ? setShowForm(true)
       : setShowForm(false);
@@ -98,7 +97,7 @@ const MainForm = () => {
           {({ errors, touched }) => (
             <Form>
               {/* Contact Information */}
-              {Object.keys(errors).length ? (
+              {gotErrors ? (
                 <p className="errorMessage">
                   There are some errors in the form, please correct them before
                   submiting the form.
