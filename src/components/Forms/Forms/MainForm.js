@@ -26,17 +26,14 @@ const MainForm = () => {
   const [checked, setChecked] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cartInfo);
 
   const handleCheck = (e) => {
     setChecked(true);
-    if (e.target.value === "shippingDifAddress") {
-      setShowForm(true);
-    } else {
-      setShowForm(false);
-    }
+    e.target.value === "shippingDifAddress"
+      ? setShowForm(true)
+      : setShowForm(false);
   };
 
   return (
@@ -96,7 +93,6 @@ const MainForm = () => {
               getPaymentDetails(paymentInfo)
             );
             setRedirect(true);
-            alert("whater");
           }}
         >
           {({ errors, touched }) => (
@@ -146,7 +142,6 @@ const MainForm = () => {
               {/* Shipping Options */}
               <h2>Billing Information</h2>
               <ShippingOptionsForm
-                checked={checked}
                 handleCheck={handleCheck}
                 shippingAddress="shippingAddress"
                 shippingDifAddress="shippingDifAddress"
