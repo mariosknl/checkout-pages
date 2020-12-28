@@ -1,4 +1,4 @@
-import { boolean, date, object, string } from "yup";
+import { boolean, object, string } from "yup";
 import valid from "card-validator";
 
 export const validationSchemaForms = object({
