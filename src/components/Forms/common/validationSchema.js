@@ -11,7 +11,7 @@ export const validationSchemaForms = object({
   phoneNumber: string()
     .matches(
       /^[0-9]{12}$/,
-      "Phone number must be 12 digits. Add your country code."
+      "Phone number must only be 12 digits. Special characters are not allowed. Add your country code."
     )
     .required("This field is mandatory"),
   firstName: string().required("This field is mandatory"),

@@ -23,7 +23,6 @@ import { WrapperStyling } from "../../styles";
 const MainForm = () => {
   const [redirect, setRedirect] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [gotErrors, setGotErrors] = useState({});
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cartInfo);
 
@@ -85,17 +84,22 @@ const MainForm = () => {
             dispatch(getShippingInfo(shippingInfo));
             dispatch(getPaymentDetails(paymentInfo));
             console.log(
-              getContactInfo(contactInfo),
-              getShippingInfo(shippingInfo),
-              getPaymentDetails(paymentInfo)
+              "This is the information we sent to the backend for the user inputs",
+              contactInfo,
+              "This is the information for the shipping address of the user",
+              shippingInfo,
+              "This is the credit card information the user entered to pay the order",
+              paymentInfo,
+              "These are the products of his/her cart.",
+              products
             );
             setRedirect(true);
           }}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, isValid }) => (
             <Form>
               {/* Contact Information */}
-              {gotErrors ? (
+              {!isValid ? (
                 <p className="errorMessage">
                   There are some errors in the form, please correct them before
                   submiting the form.
