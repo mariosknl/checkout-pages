@@ -11,8 +11,10 @@ const MainContainerStyles = styled.div`
   overflow-x: hidden;
   gap: 20px;
 
-  @media screen and (min-width: 1081px) {
+  @media screen and (min-width: 1081px) and (max-width: 1300px) {
     width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    margin: 0;
   }
 
   @media screen and (max-width: 1080px) {
