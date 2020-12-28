@@ -1,6 +1,6 @@
 # Checkout Pages
 
-This is my version of the checkout pages. The User should enter his contact information, the shipping address of the product, the billing information for the invoice, and lastly, his/her credit card information. After submitting the form and since there are no errors, you should check the console and see the informations that are sent to the backend such as the contact information,
+This is my version of the checkout pages. The User should enter his contact information, the shipping address of the product, the billing information for the invoice, and lastly, his/her credit card information. After submitting the form and since there are no errors, you should check the console and see the informations that are sent to the backend such as the contact information, shipping address, billing information, credit card details and the cart items.
 
 # BUILD WITH
 
@@ -15,6 +15,7 @@ This is my version of the checkout pages. The User should enter his contact info
 - Redux/Toolkit
 - Styled Components
 - Card/Validator
+- Perfect-Scrollbar
 
 # Usage
 
