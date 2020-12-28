@@ -9,7 +9,7 @@ const OrderPage = () => {
   return (
     <>
       <MainContainerStyles>
-        <Header />
+        <Header step="1" />
         <MainForm />
         <Order />
       </MainContainerStyles>

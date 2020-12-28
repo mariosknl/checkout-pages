@@ -3,8 +3,9 @@ import styled from "styled-components";
 const HeaderContainer = styled.header`
   grid-area: header;
   grid-column: 2/3;
-  width: 100%;
-  height: 20vh;
+  width: 50%;
+  margin: 0 auto;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   .errorMessage {
     width: 80%;
     font-size: 1rem; 
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     color: ${red[400]}
   }
 `;
