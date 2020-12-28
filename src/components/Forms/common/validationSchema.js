@@ -45,6 +45,6 @@ export const validationSchemaForms = object({
     (value) => valid.cvv(value).isValid
   ),
   terms: boolean()
-    .required("Required")
+    .required("You must accept terms and conditions.")
     .oneOf([true], "You must accept the terms and conditions."),
 });

@@ -23,7 +23,7 @@ export const ContactInformationForm = ({
         label="Phone Number"
         name={phoneNumber}
         type="text"
-        placeholder="CCxxxxxxxxxx"
+        placeholder="CCxxxxxxxxxx ( CC => Country Code )"
         className="full-width"
       />
 
