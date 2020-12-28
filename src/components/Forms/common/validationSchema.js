@@ -18,11 +18,13 @@ export const validationSchemaForms = object({
   lastName: string().required("This field is mandatory"),
   streetAddress: string().required("This field is mandatory"),
   otherInfo: string(),
-  postalCode: string().test(
-    "postal-code",
-    "Postal code is invalid.",
-    (value) => valid.postalCode(value).isValid
-  ),
+  postalCode: string()
+    .test(
+      "postal-code",
+      "Postal code is invalid.",
+      (value) => valid.postalCode(value).isValid
+    )
+    .required(),
   country: string().required("This field is mandatory"),
   city: string().required("This field is mandatory"),
   state: string().required("This field is mandatory"),

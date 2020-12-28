@@ -25,7 +25,15 @@ context("Shipping Address Form", () => {
       .focus()
       .blur()
       .get(".error")
-      .contains("This field is mandatory");
+      .contains("Postal code is invalid");
+  });
+
+  it("the postal code can't be less than 3 digits", () => {
+    cy.get("#postalCode")
+      .type("12")
+      .blur()
+      .get(".error")
+      .contains("Postal code is invalid");
   });
 
   it("fills the state/regiion", () => {
