@@ -15,9 +15,16 @@ const OrderSummary = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cartInfo.products);
 
-  const totalPrice = products.reduce((acc, item) => acc + item.price, 0);
-  const totalDiscount = products.reduce((acc, item) => acc + item.discount, 0);
-  const totalProducts = products.reduce((acc, item) => acc + item.id, 0);
+  const totalPrice =
+    products.length >= 0
+      ? products.reduce((acc, item) => acc + item.price, 0)
+      : 0;
+  const totalDiscount =
+    products.length >= 0
+      ? products.reduce((acc, item) => acc + item.discount, 0)
+      : 0;
+  const totalProducts =
+    products.length >= 0 ? products.reduce((acc, item) => acc + item.id, 0) : 0;
 
   const handleIncrement = (item) => dispatch(addProduct(item));
   const handleDecrement = (item) => dispatch(removeProduct(item));
