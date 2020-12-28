@@ -50,11 +50,11 @@ const OrderSummary = () => {
                 <img src={item.img} alt={item.name} />
                 <ListStyles>
                   <li>{item.description}</li>
-                  <li>&#8364;{totalPrice}</li>
+                  <li style={{ justifySelf: "end" }}>&#8364;{totalPrice}</li>
                   <li>Shipping</li>
-                  <li>&#8364;0</li>
+                  <li style={{ justifySelf: "end" }}>&#8364;0</li>
                   <li>Discount {item.discount}%</li>
-                  <li>
+                  <li style={{ justifySelf: "end" }}>
                     -&#8364;
                     {item.price -
                       Number(getPrice(item.price, totalDiscount)).toFixed(0)}
@@ -63,7 +63,7 @@ const OrderSummary = () => {
                 <hr className="lists" />
                 <ListStyles>
                   <li>Total</li>
-                  <li>
+                  <li style={{ justifySelf: "end" }}>
                     &#8364;
                     {totalPrice -
                       item.price +

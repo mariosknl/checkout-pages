@@ -17,6 +17,8 @@ const HeaderContainer = styled.header`
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
     grid-column: 1/2;
+    width: 100%;
+    margin: 0;
   }
 `;
 

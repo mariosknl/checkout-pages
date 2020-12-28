@@ -94,7 +94,7 @@ const OrderButtonStyles = styled.div`
 const ListStyles = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 60px;
   padding-inline-start: 10px;
   gap: 20px;
 

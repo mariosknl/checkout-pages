@@ -29,6 +29,7 @@ const FormStyles = styled.div`
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
+    width: 100%;
     height: 45vh;
     display: flex;
     justify-content: center;
@@ -52,7 +53,7 @@ const FormStyles = styled.div`
 
 const FormStyles2 = styled.div`
   width: 90%;
-  height: 43vh;
+  height: 45vh;
   padding: 0.875rem;
   border: 1px solid ${defaultTheme.borderColor};
   border-radius: 4px;
@@ -82,23 +83,28 @@ const FormStyles2 = styled.div`
     grid-column: 1 / 3;
   }
 
+  @media screen and (min-width: 1300px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1081px) and (max-width: 1300px) {
+    width: 100%;
+  }
+
   @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0;
 
-    input {
+    .dropdown {
       width: 100%;
-      padding: 0.3rem 15rem;
-      display: block;
-      margin-top: 0;
     }
 
-    .dropdown {
+    .full-width {
       width: 100%;
     }
   }

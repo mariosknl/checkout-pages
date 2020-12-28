@@ -48,6 +48,7 @@ const OrderContainerStyles = styled.div`
     width: 100%;
     background-color: white;
     margin: 0;
+    justify-self: normal;
   }
 `;
 

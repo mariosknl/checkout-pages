@@ -28,7 +28,7 @@ export const ShippingAddressForm = ({
         type="text"
         className="full-width"
       />
-      <div>
+      <div className="dropdown">
         <TextInput
           id={postalCode}
           label="Postal Code"
@@ -47,10 +47,10 @@ export const ShippingAddressForm = ({
           ))}
         </SelectCountry>
       </div>
-      <div>
+      <div className="dropdown">
         <TextInput id={city} name={city} label="City" type="text" />
       </div>
-      <div>
+      <div className="dropdown">
         <TextInput id={state} name={state} label="State/Region" type="text" />
       </div>
     </FormStyles2>
