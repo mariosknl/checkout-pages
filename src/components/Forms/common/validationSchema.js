@@ -28,6 +28,9 @@ export const validationSchemaForms = object({
   country: string().required("This field is mandatory"),
   city: string().required("This field is mandatory"),
   state: string().required("This field is mandatory"),
+  shippingAddress: string()
+    .required("You have to choose a billing option for you invoice")
+    .oneOf(["shippingAddress", "shippingDifAddress"]),
   cardHolder: string().required("Name in the card please"),
   cardNumber: string()
     .test(

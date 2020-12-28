@@ -50,6 +50,7 @@ const MainForm = () => {
               postalCode,
               city,
               state,
+              shippingAddress,
               cardHolder,
               cardNumber,
               expirationDate,
@@ -71,6 +72,7 @@ const MainForm = () => {
               postalCode,
               city,
               state,
+              shippingAddress,
             };
 
             const paymentInfo = {
