@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./Header/Header";
 
 import NotFound from "./pages/NotFound";
 import OrderPage from "./pages/OrderPage";

@@ -3,8 +3,6 @@ import { Formik, Form } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import Header from "../../Header/Header";
-
 import {
   getContactInfo,
   getPaymentDetails,
