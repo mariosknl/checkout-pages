@@ -1,4 +1,5 @@
 import { boolean, date, object, string } from "yup";
+import valid from "card-validator";
 
 export const validationSchemaForms = object({
   email: string()
@@ -17,18 +18,32 @@ export const validationSchemaForms = object({
   lastName: string().required("This field is mandatory"),
   streetAddress: string().required("This field is mandatory"),
   otherInfo: string(),
-  postalCode: string().min(5).max(5).required("This field is mandatory"),
+  postalCode: string().test(
+    "postal-code",
+    "Postal code is invalid.",
+    (value) => valid.postalCode(value).isValid
+  ),
   country: string().required("This field is mandatory"),
   city: string().required("This field is mandatory"),
   state: string().required("This field is mandatory"),
   cardHolder: string().required("Name in the card please"),
   cardNumber: string()
-    .required("Credit card number is required")
-    .matches(/^[0-9]{16}$/, "Credit card number must be 16 digits"),
-  expirationDate: date()
-    .required("Credit card required")
-    .min(new Date(), "Credit card is expired"),
-  cvv: string().min(3).max(3).required("CVC is required"),
+    .test(
+      "test-number",
+      "Credit Card Number is invalid. Must be 16 digits",
+      (value) => valid.number(value).isValid
+    )
+    .required(),
+  expirationDate: string().test(
+    "expiration-date",
+    "Credit Card is expired",
+    (value) => valid.expirationDate(value).isValid
+  ),
+  cvv: string().test(
+    "cvv-nunber",
+    "CVV is invalid. Must be 3 digits.",
+    (value) => valid.cvv(value).isValid
+  ),
   terms: boolean()
     .required("Required")
     .oneOf([true], "You must accept the terms and conditions."),
