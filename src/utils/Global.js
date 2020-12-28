@@ -24,6 +24,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
   }
 
+  #container {
+    position:relative;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+  }
+
   ul {
     list-style-type: none;
   }

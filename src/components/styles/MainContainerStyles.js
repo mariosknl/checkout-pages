@@ -3,15 +3,17 @@ import styled from "styled-components";
 import { black } from "../../utils/colors";
 
 const MainContainerStyles = styled.div`
-  width: 90%;
   height: 100vh;
   display: grid;
   grid-template-areas: "header forms order";
-  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
   position: relative;
   overflow-x: hidden;
-  left: 10%;
   gap: 20px;
+
+  @media screen and (min-width: 1081px) {
+    width: 100%;
+  }
 
   @media screen and (max-width: 1080px) {
     width: 100%;
@@ -33,7 +35,6 @@ const OrderContainerStyles = styled.div`
   width: 100%;
   justify-self: end;
   background-color: ${black[100]};
-  margin-top: 2rem;
   grid-area: order;
 
   @media screen and (max-width: 1080px) {

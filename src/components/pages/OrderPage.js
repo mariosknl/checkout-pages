@@ -9,19 +9,20 @@ import PerfectScrollbar from "perfect-scrollbar";
 const OrderPage = () => {
   const container = useRef();
   useEffect(() => {
-    const ps = new PerfectScrollbar(container.current);
+    let ps = new PerfectScrollbar(container.current);
     return () => {
       ps.destroy();
+      ps = null;
     };
   }, []);
   return (
-    <>
-      <MainContainerStyles ref={container}>
+    <div ref={container}>
+      <MainContainerStyles>
         <Header step="1" />
         <MainForm />
         <Order />
       </MainContainerStyles>
-    </>
+    </div>
   );
 };
 

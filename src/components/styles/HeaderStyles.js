@@ -3,13 +3,14 @@ import styled from "styled-components";
 const HeaderContainer = styled.header`
   grid-area: header;
   grid-column: 2/3;
-  width: 50%;
-  margin: 0 auto;
+  width: 85%;
   height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1rem auto;
+
   img {
     width: 20%;
   }
