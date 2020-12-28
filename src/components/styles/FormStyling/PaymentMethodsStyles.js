@@ -7,7 +7,7 @@ const PaymentMethodsStyles = styled.div`
   margin: 1rem 3rem;
 
   input {
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0;
@@ -17,8 +17,8 @@ const PaymentMethodsStyles = styled.div`
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
-    width: 100%;
-    margin: 1rem 1.5rem;
+    width: 90%;
+    margin: 0 auto;
 
     input {
       width: 85%;
@@ -35,6 +35,14 @@ const PaymentMethodStylesInputs = styled.div`
 
   .cvv {
     width: 50%;
+  }
+
+  @media screen and (min-width: 1081px) {
+  }
+
+  @media screen and (max-width: 1080px) {
+  }
+  @media screen and (min-width: 375px) and (max-width: 750px) {
   }
 `;
 

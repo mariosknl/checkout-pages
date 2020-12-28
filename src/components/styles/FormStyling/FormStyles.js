@@ -19,7 +19,8 @@ const FormStyles = styled.div`
     height: 60%;
     border: 1px solid ${theme.black[300]};
     border-radius: 4px;
-    margin-top: 0.4rem;
+
+    padding: 0.3rem;
   }
 
   .full-width {
@@ -28,13 +29,24 @@ const FormStyles = styled.div`
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
-    height: 25vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0;
+    margin-top: 1rem;
     padding: 1rem;
+
+    input {
+      width: 100%;
+      display: block;
+      margin-top: 0;
+    }
+
+    .smaller {
+      width: 100%;
+    }
   }
 `;
 
@@ -65,22 +77,30 @@ const FormStyles2 = styled.div`
     --webkit-appearance: ;
   }
 
-  .dropdown {
-  }
-
   .full-width {
     width: 100%;
     grid-column: 1 / 3;
   }
 
   @media screen and (min-width: 375px) and (max-width: 750px) {
-    height: 40vh;
+    width: 100%;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0;
-    padding: 1rem;
+
+    input {
+      width: 100%;
+      padding: 0.3rem 15rem;
+      display: block;
+      margin-top: 0;
+    }
+
+    .dropdown {
+      width: 100%;
+    }
   }
 `;
 

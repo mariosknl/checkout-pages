@@ -27,7 +27,7 @@ export const ContactInformationForm = ({
         className="full-width"
       />
 
-      <div>
+      <div className="smaller">
         <TextInput
           id={firstName}
           label="First Name"
@@ -35,7 +35,7 @@ export const ContactInformationForm = ({
           type="text"
         />
       </div>
-      <div>
+      <div className="smaller">
         <TextInput
           id={lastName}
           label="Last Name"
