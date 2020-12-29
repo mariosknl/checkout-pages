@@ -20,13 +20,13 @@ import FormsStylesStories from "./styles/FormsStylesStories.js";
 
 <b>Contact Information Form</b> is a custom component for collecting user input data.
 It needs <b>firstName</b>, <b>lastName</b>, <b>email</b> and <b>phoneNumber</b> to
-pass as <b>props</b> whenever we use it. It contains another custom component [TextInput](/?path=/docs/textinput--text-input)
-which controls each input. Based on the schema provided, there is email is validating
-if the email input data doesn't follow the email standards. The <b>
-  Phone Number
-</b> input accepts only 16 numbers as an input. The user needs to add his/hers <b>
-  country code
-</b> before its phone number.
+be passed as <b>props</b> whenever we use it. It contains another custom component
+[TextInput](/?path=/docs/textinput--text-input) which controls each input field individually.
+Based on the schema provided, there is an email validation to ensure user input data
+follows the email standards. The <b>Phone Number</b> input accepts only 16 numbers
+as an input. The user needs to add his/hers <b> country code </b> before its phone
+number. Lastly, <b>First Name</b> and <b>Last name</b> are mandatory and the user
+needs to fill them as well.
 
 <Preview withToolbar>
   <Story name="Contact Information Form">
@@ -83,9 +83,9 @@ It needs <b>streetAddress</b>, <b>otherInfo</b>, <b>postalCode</b>, <b>
 </b>, <b>city</b> and <b>state</b> to pass as <b>props</b> whenever we use it. It
 contains two other custom component [TextInput](/?path=/docs/textinput--text-input)
 and [SelectCountry](/?path=/docs/selectcountry--select-country) and which control
-the inputs. There are validation in every input except Other Information input which
-is optional. <b>Postal code</b> input accepts only 5 characters otherwise it will
-error out.
+the inputs individually. There are validation in every input except Other Information
+input which is optional. <b>Postal code</b> input accepts 3 characters at least otherwise
+it will error out.
 
 <Preview withToolbar>
   <Story name=" Shipping Address Form">
@@ -137,8 +137,8 @@ It needs <b>cardHolder</b>, <b>cardNumber</b>, <b>expirationDate</b>, and <b>
 </b> to pass as <b>props</b> whenever we use it. It contains another custom
 component [TextInput](/?path=/docs/textinput--text-input) which controls the
 inputs. `Card Number` input can only accept 16 digits as value otherwise it will
-error out. `Expiration date` input has an error boundary. If the date provided
-belongs to the past it will error out as well. Lastly, `CVV` input errors out if
+error out. `Expiration date` input validates if the card is expired. It accepts
+the format to be (MM / YY) or (MM / YYYY). Lastly, `CVV` input errors out if
 there are more or less than <b>3</b> characters.
 
 <Preview withToolbar>
