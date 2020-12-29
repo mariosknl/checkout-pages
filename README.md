@@ -1,6 +1,6 @@
 # Checkout Pages
 
-This is my version of the checkout pages. The User should enter his contact information, the shipping address of the product, the billing information for the invoice, and lastly, his/her credit card information. After submitting the form and since there are no errors, you should check the console and see the informations that are sent to the backend such as the contact information, shipping address, billing information, credit card details and the cart items.
+This is my version of the checkout pages. The User should enter his/her contact information, the shipping address for the product, the billing information for the invoice, and lastly, his/her credit card information. After submitting the form and since there are no errors, you should check the console and see the informations that are sent to the backend such as the contact information, shipping address, billing information, credit card details and the cart items. I deployed the website to Netlify so I can ensure that everything is working perfectly in production mode and also to be sure to check it out in different screen sizes. Below you can find the live link.
 
 # BUILD WITH
 
@@ -21,6 +21,8 @@ This is my version of the checkout pages. The User should enter his contact info
 
 `git clone git@github.com:mariosknl/checkout-pages.git`
 `npm install`
+`git checkout development`
+`npm start`
 
 # Storybook
 

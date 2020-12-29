@@ -33,9 +33,6 @@ const OrderSummary = () => {
     products.length >= 1 ? dispatch(removeProduct(item)) : 0;
   const handleIncrement = (item) => dispatch(addProduct(item));
 
-  console.log(cubbitProduct);
-  console.log(products.length);
-
   return (
     <div>
       <h2 style={{ marginLeft: "2rem" }}>Order Summary</h2>
