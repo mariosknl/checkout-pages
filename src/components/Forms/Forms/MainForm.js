@@ -162,7 +162,7 @@ const MainForm = () => {
 
               {/* Terms & Buttons */}
 
-              <Terms terms="terms" />
+              <Terms terms="terms" isValid={!isValid} />
             </Form>
           )}
         </Formik>

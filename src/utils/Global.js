@@ -49,4 +49,10 @@ export const GlobalStyle = createGlobalStyle`
     padding-top: 0.5rem;
     color: ${red[400]}
   }
+  .errorMessageFooter {
+    width: 100%;
+    text-align: right;
+    font-size: 1rem; 
+    color: ${red[400]} !important;
+  }
 `;

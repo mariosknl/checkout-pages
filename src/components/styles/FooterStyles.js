@@ -4,7 +4,6 @@ import { typeScale, blue, black } from "../../utils";
 
 const FooterStyles = styled.div`
   width: 90%;
-  height: 300px;
 
   input {
     margin-top: 1rem;
@@ -27,7 +26,15 @@ const FooterStyles = styled.div`
     color: ${blue[400]};
   }
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 1300px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1081px) and (max-width: 1300px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 750px) {
     width: 100%;
     color: ${black[200]};
 

@@ -4,7 +4,7 @@ import { Checkbox } from "../common";
 import { PrimaryButton, SecondaryButton } from "../../ui/Buttons";
 import { ButtonStyles, FooterStyles } from "../../styles";
 
-const Terms = ({ terms }) => {
+const Terms = ({ terms, isValid }) => {
   return (
     <FooterStyles>
       <Checkbox name={terms} type="checkbox">
@@ -17,6 +17,9 @@ const Terms = ({ terms }) => {
           Buy Now
         </PrimaryButton>
       </ButtonStyles>
+      {isValid ? (
+        <p className="errorMessageFooter">Please correct the errors above.</p>
+      ) : null}
       <p>
         By clicking the button 'Buy Now', I agree to the Terms and Conditions
         and the Privacy Policy
