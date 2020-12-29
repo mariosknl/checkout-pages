@@ -1,4 +1,5 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { boolean, withKnobs } from "@storybook/addon-knobs";
 import { Checkbox } from "../components/Forms/common/Checkbox.js";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -11,8 +12,8 @@ Checkbox field controlled with Formik.
 
 ## Usage
 
-Checbox is a custom component using `useField()` which is a React Hook provided by `Formik`.
-`useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. Whever you call this component we have to add a type prop if you want to have something different that `checkbox` which is the default value.
+Checkbox is a custom component using `useField()` which is a React Hook provided by `Formik`.
+`useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. Whenever we call this component we have to add a few properties to make it work such as <b>id</b> (this needs to be unique if you have more than one where we use it), <b>name</b>, <b>value</b>. Also, you need to control its functionality so depending on where we use it we can pass as props the <b>checked</b> property and the <b>onClick</b> to change whenever we click it.
 
 ## Checkbox
 
@@ -22,10 +23,20 @@ Checkbox components are used to retrieve data from users on a page and inside fo
   <Story name="Checkbox">
     <Formik initialValues={{ shippingAddress: "" }}>
       <>
-        <Checkbox id="shippingAddress" name="picked" type="checkbox" check>
+        <Checkbox
+          checked={boolean("Same Shipping Address", false)}
+          id="shippingAddress"
+          name="picked"
+          type="radio"
+        >
           Use your Shipping Address
         </Checkbox>
-        <Checkbox id="shippingAddress" name="picked2" type="checkbox">
+        <Checkbox
+          checked={boolean("Different Shipping Address", false)}
+          id="shippingDifAddress"
+          name="picked2"
+          type="radio"
+        >
           Use a different Shipping Address
         </Checkbox>
       </>

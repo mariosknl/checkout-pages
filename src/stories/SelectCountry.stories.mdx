@@ -11,7 +11,7 @@ Select Country component is controlled with Formik.
 
 ## Usage
 
-SelectCountry is a custom component using `useField()` which is a React Hook provided by `Formik`. `useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. Works like a regural HTML select tag. You provide options with `id` and `value` and whatever you want before the closing tag. If you touch the field and don't select an option you will see an error as it mandatory to choose an option. It uses `Yup` package for error handling and validation.
+<b>SelectCountry</b> is a custom component using `useField()` which is a React Hook provided by `Formik`. `useField()` includes the `label, <Field> and <ErrorMessage>` components which are again provided by Formik. `<Field>` components by default will render an `<input>` component that given a name prop will implicity grab the respective `onChange, onBlur, value` props and pass them to the element as well as any props we pass to it. Works like a regular HTML select tag. You provide options with `id` and `value` and whatever you want before the closing tag. If you touch the field and don't select an option you will see an error as it is mandatory to choose an option. It uses `Yup` package for error handling and validation.
 
 ## Checkbox
 
@@ -25,15 +25,17 @@ SelectCountry components are used to retrieve data from users on a page and insi
         country: Yup.string().required("This field is mandatory"),
       })}
     >
-      <SelectCountry id="country" name="country">
-        <option value="">Select Country</option>
-        <option id="italy" value="italy">
-          Italy
-        </option>
-        <option id="Greece" value="greece">
-          Greece
-        </option>
-      </SelectCountry>
+      <label for="country" aria-label="country">
+        <SelectCountry id="country" name="country">
+          <option value="">Select Country</option>
+          <option id="italy" value="italy">
+            Italy
+          </option>
+          <option id="Greece" value="greece">
+            Greece
+          </option>
+        </SelectCountry>
+      </label>
     </Formik>
   </Story>
 </Preview>

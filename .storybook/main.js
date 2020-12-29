@@ -4,6 +4,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-contexts/register",
     "@storybook/preset-create-react-app",
+    "@storybook/addon-knobs",
     {
       name: "@storybook/addon-docs",
       options: {
@@ -12,7 +13,7 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },
-    "@storybook/addon-a11y/register",
+    "@storybook/addon-a11y",
     "@storybook/addon-essentials",
   ],
 };

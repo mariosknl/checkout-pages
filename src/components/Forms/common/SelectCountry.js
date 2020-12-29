@@ -7,8 +7,8 @@ const SelectCountry = ({ label, ...props }) => {
     <div>
       <label id="countryLabel" htmlFor={props.id || props.name}>
         {label}
+        <select {...field} {...props} className="drowdown" />
       </label>
-      <select {...field} {...props} />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
