@@ -37,6 +37,8 @@ git clone `git@github.com:mariosknl/checkout-pages.git`
 
 A new tab on the browser will open at `localhost:6006`. At the sidebar, you can see all the elements used in the project in categories. There is a <b>Form</b> story that includes at least one of the components inside. There is also a <b>Forms</b> story folder which includes 3 different forms used individually in the main project form.
 
+If we want to publish the storybook and share it with users that don't have the permission to see this repository and run the above command, we have to do something different. Please submit an issue so I can give you the proper instruction on how this can be done.
+
 ## Run Tests
 
 `npx cypress open`
