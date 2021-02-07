@@ -1,4 +1,5 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
 import { PrimaryButton, SecondaryButton } from "../components/ui/Buttons.js";
 
 <Meta title="Buttons" component={PrimaryButton} />
@@ -13,20 +14,24 @@ Buttons are used to trigger internal actions within your web applications.
 
 ## Primary Buttons
 
-Primary buttons are used as a call to action and indicate the most important action on a page.
+Primary buttons are used as a call to action like submitting the form and indicate the most important action on a page.
 
 <Preview withToolbar>
   <Story name="primary">
-    <PrimaryButton>Buy Now</PrimaryButton>
+    <PrimaryButton onClick={action("primary-button-clicked")}>
+      Buy Now
+    </PrimaryButton>
   </Story>
 </Preview>
 
 ## Secondary Buttons
 
-Primary buttons are used as a call to action and indicate the most important action on a page.
+Primary buttons are used as a call to action and indicate the important actions on a page.
 
 <Preview withToolbar>
   <Story name="secondary">
-    <SecondaryButton>Back</SecondaryButton>
+    <SecondaryButton onClick={action("secondary-button-clicked")}>
+      Back
+    </SecondaryButton>
   </Story>
 </Preview>

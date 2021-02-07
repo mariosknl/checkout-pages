@@ -1,50 +1,55 @@
-import * as Yup from "yup";
+import { boolean, object, string } from "yup";
 import valid from "card-validator";
 
-import { expirationDate } from "./expirationDate";
-
-const validationSchemaContact = Yup.object().shape({
-  email: Yup.string()
+export const validationSchemaForms = object({
+  email: string()
     .email("It needs to be a valid email")
     .matches(
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     )
-    .required("Cannot be empty"),
-  phoneNumber: Yup.number()
-    .min(
-      12,
-      "Needs to be at least 12 numbers. Be sure to add your country code in front."
+    .required("This field is mandatory"),
+  phoneNumber: string()
+    .matches(
+      /^[0-9]{12}$/,
+      "Phone number must only be 12 digits. Special characters are not allowed. Add your country code."
     )
-    .integer()
-    .required("Cannot be empty"),
-  firstName: Yup.string().required("Cannot be empty"),
-  lastName: Yup.string().required("Cannot be empty"),
-});
-
-const validationSchemaShipping = Yup.object().shape({
-  streetAddress: Yup.string().required("Cannot be empty"),
-  otherInfo: Yup.string(),
-  postalCode: Yup.string().required("Cannot be empty"),
-  country: Yup.string().required("Cannot be empty"),
-  city: Yup.string().required("Cannot be empty"),
-  state: Yup.string().required("Cannot be empty"),
-});
-
-const validationSchemaPayment = Yup.object().shape({
-  cardHolder: Yup.string().required(),
-  cardNumber: Yup.string()
+    .required("This field is mandatory"),
+  firstName: string().required("This field is mandatory"),
+  lastName: string().required("This field is mandatory"),
+  streetAddress: string().required("This field is mandatory"),
+  otherInfo: string(),
+  postalCode: string()
+    .test(
+      "postal-code",
+      "Postal code is invalid.",
+      (value) => valid.postalCode(value).isValid
+    )
+    .required(),
+  country: string().required("This field is mandatory"),
+  city: string().required("This field is mandatory"),
+  state: string().required("This field is mandatory"),
+  shippingAddress: string()
+    .required("You have to choose a billing option for you invoice")
+    .oneOf(["shippingAddress", "shippingDifAddress"]),
+  cardHolder: string().required("Name in the card please"),
+  cardNumber: string()
     .test(
       "test-number",
-      "Credit Card Number is invalid",
+      "Credit Card Number is invalid. Must be 16 digits",
       (value) => valid.number(value).isValid
     )
     .required(),
-  expirationData: expirationDate,
-  CVV: Yup.number().min(3).max(3).integer().required("Cannot be empty"),
+  expirationDate: string().test(
+    "expiration-date",
+    "Credit Card is expired",
+    (value) => valid.expirationDate(value).isValid
+  ),
+  cvv: string().test(
+    "cvv-nunber",
+    "CVV is invalid. Must be 3 digits.",
+    (value) => valid.cvv(value).isValid
+  ),
+  terms: boolean()
+    .required("You must accept terms and conditions.")
+    .oneOf([true], "You must accept the terms and conditions."),
 });
-
-export {
-  validationSchemaContact,
-  validationSchemaPayment,
-  validationSchemaShipping,
-};

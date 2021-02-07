@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Checkout Pages
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my version of the checkout pages. The User should enter his/her contact information, the shipping address for the product, the billing information for the invoice, and lastly, his/her credit card information. After submitting the form and since there are no errors, you should check the console and see the information that is sent to the backend such as the contact information, shipping address, billing information, credit card details, and the cart items. I deployed the website to Netlify so I can ensure that everything is working perfectly in production mode and also to be sure to check it out in different screen sizes. Below you can find the live link.
 
-## Available Scripts
+## BUILD WITH
 
-In the project directory, you can run:
+- ReactJS
+- Redux
+- Storybook
+- Cypress Testing Framework
+- React-Redux
+- Formik
+- Yup
+- React Hooks
+- Redux/Toolkit
+- Styled Components
+- Card/Validator
+- Perfect-Scrollbar
 
-### `yarn start`
+## Live Link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Checkout Pages](https://clever-brahmagupta-505fa5.netlify.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
 
-### `yarn test`
+git clone `git@github.com:mariosknl/checkout-pages.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `yarn build`
+`git checkout development`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Storybook
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm run storybook`
 
-### `yarn eject`
+A new tab on the browser will open at `localhost:6006`. At the sidebar, you can see all the elements used in the project in categories. There is a <b>Form</b> story that includes at least one of the components inside. There is also a <b>Forms</b> story folder which includes 3 different forms used individually in the main project form.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If we want to publish the storybook and share it with users that don't have the permission to see this repository and run the above command, we have to do something different. Please submit an issue so I can give you the proper instruction on how this can be done.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Run Tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`npx cypress open`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Choose an integration test file from the browser window to see the test execution live in the new window.
 
-## Learn More
+## AUTHOR
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Github: [@mariosknl](https://github.com/mariosknl)
+- Twitter: [@mariosknl](https://twitter.com/MariosKnl)
+- Linkedln: [marios-kanellopoulos](https://www.linkedin.com/in/marios-kanellopoulos)
+- Portfolio: [marios-kanellopoulos](https://marioskanellopoulos.com/)

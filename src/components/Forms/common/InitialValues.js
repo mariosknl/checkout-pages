@@ -1,24 +1,16 @@
-const initialValuesContact = {
+export const initialValues = {
   email: "",
   phoneNumber: "",
   firstName: "",
   lastName: "",
-};
-
-const initialValuesShipping = {
   streetAddress: "",
   otherInfo: "",
   postalCode: "",
   country: "",
   city: "",
   state: "",
-};
-
-const initialValuesPayment = {
   cardHolder: "",
   cardNumber: "",
   expirationDate: "",
-  CVV: "",
+  cvv: "",
 };
-
-export { initialValuesContact, initialValuesPayment, initialValuesShipping };

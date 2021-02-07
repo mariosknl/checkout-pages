@@ -3,13 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "@storybook/addon-knobs": "^6.1.11",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "card-validator": "^8.1.0",
     "formik": "^2.2.6",
+    "perfect-scrollbar": "^1.5.0",
     "polished": "^4.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-payment-inputs": "^1.1.7",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
@@ -53,7 +59,8 @@
     "@storybook/node-logger": "^6.1.11",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.11",
-    "card-validator": "^8.1.0",
-    "countries-list": "^2.5.6"
+    "countries-list": "^2.5.6",
+    "cypress": "^6.2.0",
+    "storybook-formik": "^2.1.2"
   }
 }

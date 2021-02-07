@@ -1,0 +1,181 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+
+import { Formik, Form } from "formik";
+import { object, string, date } from "yup";
+
+import {
+  ContactInformationForm,
+  PaymentMethodsForm,
+  ShippingAddressForm,
+} from "../components/Forms/Forms";
+import { PrimaryButton } from "../components/ui/Buttons.js";
+import FormsStylesStories from "./styles/FormsStylesStories.js";
+
+<Meta title="Forms" />
+
+# Contact Information Form
+
+## Usage
+
+<b>Contact Information Form</b> is a custom component for collecting user input data.
+It needs <b>firstName</b>, <b>lastName</b>, <b>email</b> and <b>phoneNumber</b> to
+be passed as <b>props</b> whenever we use it. It contains another custom component
+[TextInput](/?path=/docs/textinput--text-input) which controls each input field individually.
+Based on the schema provided, there is an email validation to ensure user input data
+follows the email standards. The <b>Phone Number</b> input accepts only 16 numbers
+as an input. The user needs to add his/hers <b> country code </b> before its phone
+number. Lastly, <b>First Name</b> and <b>Last name</b> are mandatory and the user
+needs to fill them as well.
+
+<Preview withToolbar>
+  <Story name="Contact Information Form">
+    <FormsStylesStories>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+        }}
+        validationSchema={object({
+          firstName: string().required("This field is mandatory"),
+          lastName: string().required("This field is mandatory"),
+          email: string()
+            .email("it needs to be a valid email")
+            .matches(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            )
+            .required("This field is mandatory"),
+          phoneNumber: string()
+            .matches(
+              /^[0-9]{12}$/,
+              "Phone number must be 12 digits. Add your country code."
+            )
+            .required("This field is mandatory"),
+        })}
+      >
+        {(formik) => (
+          <Form>
+            <ContactInformationForm
+              firstName="firstName"
+              lastName="lastName"
+              email="email"
+              phoneNumber="phoneNumber"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </Form>
+        )}
+      </Formik>
+    </FormsStylesStories>
+  </Story>
+</Preview>
+
+# Shipping Address Form
+
+## Usage
+
+<b>Shipping Address Form</b> is a custom component for collecting user input data.
+It needs <b>streetAddress</b>, <b>otherInfo</b>, <b>postalCode</b>, <b>
+  country
+</b>, <b>city</b> and <b>state</b> to pass as <b>props</b> whenever we use it. It
+contains two other custom component [TextInput](/?path=/docs/textinput--text-input)
+and [SelectCountry](/?path=/docs/selectcountry--select-country) and which control
+the inputs individually. There are validation in every input except Other Information
+input which is optional. <b>Postal code</b> input accepts 3 characters at least otherwise
+it will error out.
+
+<Preview withToolbar>
+  <Story name=" Shipping Address Form">
+    <FormsStylesStories>
+      <Formik
+        initialValues={{
+          streetAddress: "",
+          otherInfo: "",
+          postalCode: "",
+          country: "",
+          city: "",
+          state: "",
+        }}
+        validationSchema={object({
+          streetAddress: string().required("This field is mandatory"),
+          otherInfo: string(),
+          postalCode: string().required("This field is mandatory"),
+          country: string().required("This field is mandatory"),
+          city: string().required("This field is mandatory"),
+          state: string().required("This field is mandatory"),
+        })}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <ShippingAddressForm
+              streetAddress="streetAddress"
+              otherInfo="otherInfo"
+              postalCode="postalCode"
+              city="city"
+              state="state"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </form>
+        )}
+      </Formik>
+    </FormsStylesStories>
+  </Story>
+</Preview>
+
+# Payment Methods Form
+
+## Usage
+
+<b>Payment Methods Form</b> is a custom component for collecting user input data.
+It needs <b>cardHolder</b>, <b>cardNumber</b>, <b>expirationDate</b>, and <b>
+  cvv
+</b> to pass as <b>props</b> whenever we use it. It contains another custom
+component [TextInput](/?path=/docs/textinput--text-input) which controls the
+inputs. `Card Number` input can only accept 16 digits as value otherwise it will
+error out. `Expiration date` input validates if the card is expired. It accepts
+the format to be (MM / YY) or (MM / YYYY). Lastly, `CVV` input errors out if
+there are more or less than <b>3</b> characters.
+
+<Preview withToolbar>
+  <Story name="Payment Methods Form">
+    <FormsStylesStories>
+      <Formik
+        initialValues={{
+          cardHolder: "",
+          cardNumber: "",
+          expirationDate: "",
+          cvv: "",
+        }}
+        validationSchema={object({
+          cardHolder: string().required("Name in the card please"),
+          cardNumber: string()
+            .required("Credit card number is required")
+            .matches(/^[0-9]{16}$/, "Credit card number must be 16 digits"),
+          expirationDate: date()
+            .required("Credit card expiration date is required")
+            .min(new Date(), "Credit card is expired"),
+          cvv: string().min(3).max(3).required("CVC is required"),
+        })}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <PaymentMethodsForm
+              cardHolder="cardHolder"
+              cardNumber="cardNumber"
+              expirationDate="expirationDate"
+              cvv="cvv"
+            />
+            <PrimaryButton onClick={action("form-submitted")}>
+              Submit
+            </PrimaryButton>
+          </form>
+        )}
+      </Formik>
+    </FormsStylesStories>
+  </Story>
+</Preview>
