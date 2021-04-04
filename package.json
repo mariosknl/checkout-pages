@@ -61,6 +61,6 @@
     "@storybook/react": "6.1.21",
     "countries-list": "2.6.1",
     "cypress": "6.8.0",
-    "storybook-formik": "2.1.3"
+    "storybook-formik": "2.1.5"
   }
 }
