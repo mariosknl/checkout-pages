@@ -7,7 +7,7 @@
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "13.1.9",
     "card-validator": "8.1.1",
-    "formik": "2.2.6",
+    "formik": "2.2.9",
     "perfect-scrollbar": "1.5.1",
     "polished": "4.1.2",
     "react": "17.0.2",
