@@ -48,15 +48,15 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "6.3.4",
-    "@storybook/addon-actions": "6.3.4",
+    "@storybook/addon-a11y": "6.3.6",
+    "@storybook/addon-actions": "6.3.6",
     "@storybook/addon-contexts": "5.3.21",
-    "@storybook/addon-docs": "6.3.4",
-    "@storybook/addon-essentials": "6.3.4",
-    "@storybook/addon-links": "6.3.4",
-    "@storybook/node-logger": "6.3.4",
+    "@storybook/addon-docs": "6.3.6",
+    "@storybook/addon-essentials": "6.3.6",
+    "@storybook/addon-links": "6.3.6",
+    "@storybook/node-logger": "6.3.6",
     "@storybook/preset-create-react-app": "3.2.0",
-    "@storybook/react": "6.3.4",
+    "@storybook/react": "6.3.6",
     "countries-list": "2.6.1",
     "cypress": "8.0.0",
     "storybook-formik": "2.1.6"
