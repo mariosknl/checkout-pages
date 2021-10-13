@@ -5,7 +5,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "1.6.2",
     "@testing-library/react": "12.1.2",
-    "@testing-library/user-event": "13.2.1",
+    "@testing-library/user-event": "13.3.0",
     "card-validator": "8.1.1",
     "formik": "2.2.9",
     "perfect-scrollbar": "1.5.2",
