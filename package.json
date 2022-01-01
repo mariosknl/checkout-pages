@@ -15,7 +15,7 @@
     "react-payment-inputs": "1.1.8",
     "react-redux": "7.2.6",
     "react-router-dom": "6.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.0",
     "styled-components": "5.3.3",
     "styled-components-modifiers": "1.2.5",
     "web-vitals": "2.1.2",
