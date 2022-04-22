@@ -53,6 +53,6 @@
     "@storybook/addon-contexts": "5.3.21",
     "countries-list": "2.6.1",
     "cypress": "9.5.4",
-    "storybook-formik": "2.3.1"
+    "storybook-formik": "2.4.0"
   }
 }
