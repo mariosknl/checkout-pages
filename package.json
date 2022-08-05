@@ -48,8 +48,8 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "6.5.9",
-    "@storybook/addon-actions": "6.5.9",
+    "@storybook/addon-a11y": "6.5.10",
+    "@storybook/addon-actions": "6.5.10",
     "@storybook/addon-contexts": "5.3.21",
     "countries-list": "2.6.1",
     "cypress": "10.4.0",
