@@ -16,7 +16,7 @@
     "react-redux": "8.0.5",
     "react-router-dom": "6.11.2",
     "react-scripts": "5.0.1",
-    "styled-components": "5.3.10",
+    "styled-components": "5.3.11",
     "styled-components-modifiers": "1.2.5",
     "web-vitals": "3.3.1",
     "yup": "1.1.1"
