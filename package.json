@@ -18,7 +18,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "6.1.8",
     "styled-components-modifiers": "1.2.5",
-    "web-vitals": "3.5.1",
+    "web-vitals": "3.5.2",
     "yup": "1.3.3"
   },
   "scripts": {
