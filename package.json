@@ -51,7 +51,7 @@
     "@storybook/addon-a11y": "7.6.17",
     "@storybook/addon-actions": "7.6.17",
     "@storybook/addon-contexts": "5.3.21",
-    "countries-list": "3.0.6",
+    "countries-list": "3.1.0",
     "cypress": "13.6.6",
     "storybook-formik": "2.4.2"
   }
