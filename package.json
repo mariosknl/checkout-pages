@@ -19,7 +19,7 @@
     "styled-components": "6.1.13",
     "styled-components-modifiers": "1.2.5",
     "web-vitals": "4.2.4",
-    "yup": "1.4.0"
+    "yup": "1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
