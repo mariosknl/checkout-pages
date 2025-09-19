@@ -48,7 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "9.1.2",
+    "@storybook/addon-a11y": "9.1.7",
     "@storybook/addon-actions": "9.0.8",
     "@storybook/addon-contexts": "5.3.21",
     "countries-list": "3.1.1",
